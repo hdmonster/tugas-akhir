@@ -26,6 +26,9 @@
 %===========================================================
 % Require Package
 %-----------------------------------------------------------
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+
 % to add indent for first paragraph
 \RequirePackage{indentfirst}
 
@@ -145,7 +148,7 @@
     % \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{theheader}{ %style for header
-    \fancyhead[R]{Universitas Hasanuddin}
+    \fancyhead[R]{Institut Teknologi Kalimantan}
 }
 %-----------------------------------------------------------
 % End Setting footer, header and page number
@@ -240,7 +243,7 @@
   angle=0,       
   opacity=.2,
   hshift=3mm,
-  contents={\includegraphics[width=14cm]{images/logoUH.png}}
+  contents={\includegraphics[width=14cm]{images/itk_logo_only.png.png}}
 }
 \newcommand\addwatermark{\BgThispage}
 %-----------------------------------------------------------
@@ -293,8 +296,6 @@
 \newcommand{\@degree}{}
 \newcommand{\program}[1]{\gdef\@program{#1}}
 \newcommand{\@program}{}
-\newcommand{\dept}[1]{\gdef\@dept{#1}}
-\newcommand{\@dept}{}
 \newcommand{\faculty}[1]{\gdef\@faculty{#1}}
 \newcommand{\@faculty}{}
 \newcommand{\university}[1]{\gdef\@university{#1}}
@@ -333,7 +334,7 @@
         \begin{singlespace}
             \MakeUppercase{\normalfont\bfseries\@titleskripsi}\par\nobreak
             \vfill
-            \includegraphics[height=4.85cm]{images/logoUH}
+            \includegraphics[height=4.85cm]{images/itk_logo_only.png}
             \vfill
 
             Oleh\\
@@ -342,19 +343,18 @@
             \vfill
 
             {\normalfont
-            \begin{tabular}{p{2cm}p{4cm}p{7cm}}
+            \begin{tabular}{p{2cm}p{4cm}p{10cm}}
                 & Pembimbing Utama &: \@firstsupervisor\\
-                & Pembimbing Pertama  &: \@secondsupervisor\\
-                & Penguji  &: 1.\@firstexaminer\\
-                & & \hspace{1.8mm} 2.\@secondexaminer\\
+                & Pembimbing Pendamping  &: \@secondsupervisor\\
+                % & Penguji  &: 1.\@firstexaminer\\
+                % & & \hspace{1.8mm} 2.\@secondexaminer\\
             \end{tabular}
             }
 
             \vspace{2.0cm}
             {\normalfont
             \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-            \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
-            \MakeUppercase{\normalfont\bfseries Fakultas \@faculty}\\
+            \MakeUppercase{\normalfont\bfseries Jurusan \@faculty}\\
             \MakeUppercase{\normalfont\bfseries\@university}\\
             \MakeUppercase{\normalfont\bfseries\@city}\\
 
@@ -379,7 +379,7 @@
     \setcounter{page}{1}
     \begin{center}
         \begin{singlespace}
-            \MakeUppercase{\normalfont\bfseries Skripsi}
+            \MakeUppercase{\normalfont\bfseries Tugas Akhir}
             \vspace{2.0cm}
             % \vfill
 
@@ -394,13 +394,12 @@
             \normalfont\bfseries{\@idnum}\\
             \vfill
 
-            \includegraphics[height=4.85cm]{images/logoUH}
+            \includegraphics[height=4.85cm]{images/itk_logo_only.png}
             \vfill
             
             {\normalfont
             \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-            \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
-            \MakeUppercase{\normalfont\bfseries Fakultas \@faculty}\\
+            \MakeUppercase{\normalfont\bfseries Jurusan \@faculty}\\
             \MakeUppercase{\normalfont\bfseries\@university}\\
             \MakeUppercase{\normalfont\bfseries\@city}\\
 
@@ -432,7 +431,7 @@
             \bfseries{SKRIPSI}
             \vfill
 
-            \normalfont{Diajukan sebagai salah satu syarat untuk memperoleh gelar {\@degree} pada Program Studi {\@program} Departemen {\@dept} Fakultas {\@faculty} {\@university} {\@city}}\\
+            \normalfont{Diajukan sebagai salah satu syarat untuk memperoleh gelar {\@degree} pada Program Studi {\@program} Jurusan {\@faculty} {\@university} {\@city}}\\
             \vfill
 
             {\normalfont\bfseries
@@ -443,8 +442,7 @@
 
             {\normalfont
                 \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-                \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
-                \MakeUppercase{\normalfont\bfseries Fakultas \@faculty}\\
+                \MakeUppercase{\normalfont\bfseries Jurusan \@faculty}\\
                 \MakeUppercase{\normalfont\bfseries\@university}\\
                 \MakeUppercase{\normalfont\bfseries\@city}\\
                 \vspace{0.2cm}
@@ -530,7 +528,7 @@
             \vspace{1.0cm}
         \end{singlespace}
 
-            Telah dipertahankan di hadapan Panitia Ujian yang dibentuk dalam rangka Penyelesaian Studi Program Sarjana pada Program Studi {\@program} Fakultas {\@faculty} {\@university} dan dinyatakan telah memenuhi syarat kelulusan \\
+            Telah dipertahankan di hadapan Panitia Ujian yang dibentuk dalam rangka Penyelesaian Studi Program Sarjana pada Program Studi {\@program} Jurusan {\@faculty} {\@university} dan dinyatakan telah memenuhi syarat kelulusan \\
 
             \vspace{0.2cm}
             Menyetujui,
@@ -594,7 +592,7 @@
     \end{singlespace}
     
     \noindent
-    Telah dipertahankan di depan Tim Penguji dan diterima sebagai bagian persyaratan untuk memperoleh gelar {\@degree} pada Program Studi {\@program} Fakultas {\@faculty} {\@university}.\\
+    Telah dipertahankan di depan Tim Penguji dan diterima sebagai bagian persyaratan untuk memperoleh gelar {\@degree} pada Program Studi {\@program} Jurusan {\@faculty} {\@university}.\\
 
     \begin{center}
         \begin{doublespace} 
@@ -640,8 +638,7 @@
                 Nama &:& \@fullname\\
                 NIM &:& \@idnum\\
                 Program Studi &:& \@program\\
-                Departemen &:& \@dept\\
-                Fakultas &:& \@faculty\\
+                Jurusan &:& \@faculty\\
                 Jenis Karya &:& Skripsi
             \end{tabular}
         \end{center}
