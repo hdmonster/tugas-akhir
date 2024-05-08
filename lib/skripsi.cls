@@ -9,11 +9,11 @@
 % Original author:
 % Dir Sulaiman
 % https://github.com/dirsulaiman/skripsi
-% 
+%
 % Thanks and reference to:
 % Andi Kresna Jaya, S.Si.M.Si (unhasskripsi-latex)
 % Guntur D Putra (https://github.com/gtrdp/template-skripsi)
-% 
+%
 % License:
 % BSD 3-Clause "New" or "Revised" License
 % https://github.com/dirsulaiman/skripsi/blob/master/LICENSE
@@ -69,10 +69,10 @@
 \RequirePackage{chngcntr}
 
 % Setup the caption of figure, table and equation
-\RequirePackage[font=small, labelfont={it},textfont={it}, justification=centering]{caption}
+\RequirePackage[font=small, labelfont={it},textfont={it}, labelsep=space, justification=centering]{caption}
 
 % Setup label of enumerate item
-\RequirePackage{enumitem} 
+\RequirePackage{enumitem}
 % \renewcommand{\theenumi}{\Alph{enumi}}
 
 % use Watermark
@@ -229,7 +229,7 @@
 \setlength{\marginparsep}{0pt}
 \setlength{\marginparwidth}{0pt}
 %to set indent approx 6 character
-\setlength{\parindent}{3em} 
+\setlength{\parindent}{3em}
 %-----------------------------------------------------------
 % End Page Layout, Margin
 %===========================================================
@@ -239,8 +239,8 @@
 % Set Watermark
 %-----------------------------------------------------------
 \backgroundsetup{
-  scale=1,       
-  angle=0,       
+  scale=1,
+  angle=0,
   opacity=.2,
   hshift=3mm,
   contents={\includegraphics[width=14cm]{images/itk_logo_only.png.png}}
@@ -396,7 +396,7 @@
 
             \includegraphics[height=4.85cm]{images/itk_logo_only.png}
             \vfill
-            
+
             {\normalfont
             \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
             \MakeUppercase{\normalfont\bfseries Jurusan \@faculty}\\
@@ -464,7 +464,7 @@
 \def\authenticationpage{
     \addwatermark
     \addcontentsline{toc}{chapter}{HALAMAN PERNYATAAN KEOTENTIKAN}
-    
+
     \begin{center}
         \MakeUppercase{\normalfont\large\bfseries\expandafter{HALAMAN PERNYATAAN KEOTENTIKAN}}\\
         \vspace{1cm}
@@ -472,7 +472,7 @@
 
     \noindent
     Yang bertanda tangan di bawah ini: \\
-    \begin{tabular}{ m{0.5cm} l c l } 
+    \begin{tabular}{ m{0.5cm} l c l }
         & Nama          & : & \@fullname \\
         & NIM           & : & \@idnum \\
         & Program Studi & : & \@program \\
@@ -494,7 +494,7 @@
 
     \noindent
     Apabila dikemudian hari terbukti atau dapat dibuktikan bahwa sebagian atau keseluruhan skripsi ini merupakan hasil karya orang lain, maka saya bersedia menerima sanksi atas perbuatan tersebut.
-    
+
     \vspace{1cm}
     \begin{flushright}
         \@city, \@examdate\\
@@ -590,15 +590,15 @@
             \end{tabular}
         \end{center}
     \end{singlespace}
-    
+
     \noindent
     Telah dipertahankan di depan Tim Penguji dan diterima sebagai bagian persyaratan untuk memperoleh gelar {\@degree} pada Program Studi {\@program} Jurusan {\@faculty} {\@university}.\\
 
     \begin{center}
-        \begin{doublespace} 
+        \begin{doublespace}
             DEWAN PENGUJI\\
             \begin{tabular}{l l l c}
-                & & & Tanda Tangan \\ 
+                & & & Tanda Tangan \\
                 1. & Ketua &: \@firstsupervisor & (........................)\\ \\
                 2. & Sekretaris &: \@secondsupervisor & (........................)\\ \\
                 3. & Anggota &: \@firstexaminer & (........................)\\ \\
@@ -607,7 +607,7 @@
         \end{doublespace}
     \end{center}
     \begin{tabular}{l l}
-        Ditetapkan di &: \@city \\ 
+        Ditetapkan di &: \@city \\
         Tanggal &: \@examdate
     \end{tabular}
     \pagebreak

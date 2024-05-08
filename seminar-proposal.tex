@@ -2,11 +2,23 @@
 
 \usepackage{blindtext}
 \usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{caption}
+
+% Redefine caption format for regular tables
+\captionsetup[table]{position=top,justification=raggedright,
+singlelinecheck=false,labelsep=space}
+
+% Redefine caption format for longtables
+\captionsetup[longtable]{position=top,justification=raggedright,singlelinecheck=false,labelsep=space}
+
+% \pagestyle{fancy}
+% \rhead{Tugas Akhir Program Studi Sistem Informasi}
 
 %===========================================================
 % Definisi Data Peneliti, Judul, Pembimbing dan Penguji
 %-----------------------------------------------------------
-\titleskripsi{PENGEMBANGAN SISTEM MONITORING MESIN DIESEL BERBASIS IOT MENGGUNAKAN METODE EXTREME PROGRAMMING (XP)}
+\titleskripsi{PENGEMBANGAN SISTEM MONITORING MESIN DIESEL BERBASIS IOT PADA PT BISMA JAYA MENGGUNAKAN METODE EXTREME PROGRAMMING (XP)}
 
 \fullname{Haidar Dzaky Sumpena}
 \idnum{10201043}
