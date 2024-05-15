@@ -1,38 +1,59 @@
 \documentclass{lib/skripsi}
 
-\usepackage{longtable}
 \usepackage{blindtext}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{caption}
+
+% Redefine caption format for regular tables
+\captionsetup[table]{position=top,justification=raggedright}
+
+% Redefine caption format for longtables
+\captionsetup[longtable]{position=top,justification=raggedright}
+
+% \pagestyle{fancy}
+% \rhead{Tugas Akhir Program Studi Sistem Informasi}
 
 %===========================================================
 % Definisi Data Peneliti, Judul, Pembimbing dan Penguji
 %-----------------------------------------------------------
-\titleskripsi{IMPLEMENTASI FILTER SPASIAL LINEAR PADA VIDEO \textit{STREAM} MENGGUNAKAN \textit{FPGA HARDWARE ACCELERATOR}}
+\titleskripsi{PENGEMBANGAN SISTEM MONITORING MESIN DIESEL BERBASIS IOT PADA PT BISMA JAYA MENGGUNAKAN METODE EXTREME PROGRAMMING (XP)}
 
-\fullname{SULAEMAN}
-\idnum{H131 16 002}
+\fullname{Haidar Dzaky Sumpena}
+\idnum{10201043}
 
-\yearsubmit{2021}
+\yearsubmit{2023}
 \program{Sistem Informasi}
-\dept{Matematika}
-\faculty{Matematika dan Ilmu Pengetahuan Alam}
-\university{Universitas Hasanuddin}
-\city{Makassar}
+\faculty{Matematika dan Teknologi Informasi}
+\university{Institut Teknologi Kalimantan}
+\city{Balikpapan}
 
-\firstsupervisor{Dr. Eng. Armin Lawi, S.Si., M.Eng.}
-\firstsupervisorNIP{197204231995121001}
-\secondsupervisor{Supri Bin Hj Amir, S.Si., M.Eng.}
-\secondsupervisorNIP{198805042019031012}
-\firstexaminer{ Dr. Hendra, S.Si., M.Kom.}
-\secondexaminer{ Nur Hilal A Syahrir, S.Si., M.Si.}
+\firstsupervisor{Aidil Saputra Kirsan, S.Kom., M.Tr.Kom}
+\secondsupervisor{Henokh Lugo Hariyanto S.Si., M.Sc.}
+% \firstexaminer{ - }
+% \secondexaminer{ - }
 %-----------------------------------------------------------
 % End Definisi Data Peneliti, Judul, Pembimbing dan Penguji
 %===========================================================
 
 \begin{document}
     \noindent
-    \textit{Seminar II}
     \coverproposal
     \pagenumbering{roman}
+
+    %===========================================================
+    % Kata pengantar, abstract
+    %-----------------------------------------------------------
+
+    \supervisorapprovalpage
+
+    \addcontentsline{toc}{chapter}{KATA PENGANTAR}
+    \input{include/kata-pengantar.tex}
+    \pagebreak
+
+    \addcontentsline{toc}{chapter}{ABSTRAK}
+    \input{include/halaman-abstrak.tex}
+    \pagebreak
 
     %===========================================================
     % Daftar isi, daftar gambar, daftar tabel
@@ -47,10 +68,6 @@
 
     \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
     \listoffigures
-    \pagebreak
-
-    \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
-    \listofappendices
     \pagebreak
 
     \pagenumbering{arabic}
@@ -78,15 +95,5 @@
     %-----------------------------------------------------------
     % End Daftar Pustaka
     %===========================================================
-    
-    %===========================================================
-    % Daftar Lampiran
-    %-----------------------------------------------------------
-    \appendix
-    \addcontentsline{toc}{chapter}{LAMPIRAN}
-    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-    \input{include/lampiran.tex}
-    %-----------------------------------------------------------
-    % End Daftar Lampiran
-    %===========================================================
+
 \end{document}

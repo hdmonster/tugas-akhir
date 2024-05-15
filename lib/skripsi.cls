@@ -69,7 +69,7 @@
 \RequirePackage{chngcntr}
 
 % Setup the caption of figure, table and equation
-\RequirePackage[font=small, labelfont={it},textfont={it}, labelsep=space, justification=centering]{caption}
+\RequirePackage[font=small, labelfont={bf}, labelsep=period, justification=centering]{caption}
 
 % Setup label of enumerate item
 \RequirePackage{enumitem}
@@ -113,7 +113,7 @@
 \addbibresource{bibtex/daftar-pustaka.bib}
 
 % redefine "et al" in bib to "dkk"
-\DefineBibliographyStrings{english}{andothers={dkk\adddot}}
+\DefineBibliographyStrings{english}{and={dan},andothers={dkk\adddot}}
 % force to use quote in title field of bibliographi
 \DeclareFieldFormat
   [article,inbook,incollection,inproceedings,patent,thesis,masterthesis,misc,unpublished, book]
@@ -243,7 +243,7 @@
   angle=0,
   opacity=.2,
   hshift=3mm,
-  contents={\includegraphics[width=14cm]{images/itk_logo_only.png.png}}
+  contents={\includegraphics[width=14cm]{images/itk_logo_only.png}}
 }
 \newcommand\addwatermark{\BgThispage}
 %-----------------------------------------------------------
@@ -508,56 +508,52 @@
 % End Define Authentication Page
 %===========================================================
 
-
 %===========================================================
 % Define Supervisor Approval Page
 %-----------------------------------------------------------
 \def\supervisorapprovalpage{
-    \addwatermark
-    \addcontentsline{toc}{chapter}{HALAMAN PERSETUJUAN PEMBIMBING}
+    % \addwatermark
+    \addcontentsline{toc}{chapter}{LEMBAR PERSETUJUAN}
     \begin{center}
-        \MakeUppercase{\normalfont\large\bfseries\expandafter{\@titleskripsi}}\\
-        \vspace{0.5cm}
+        \MakeUppercase{\normalfont\large\bfseries\expandafter{lembar persetujuan}}\\
+
+        % \vspace{0.5cm}
     \end{center}
 
     \begin{center}
-        Disusun dan diajukan oleh\\
+        Proposal Tugas Akhir dengan judul :\\
         \begin{singlespace}
-            \large\bfseries{\@fullname}\\
-            \large\bfseries{\@idnum}\\
+            "\bfseries{\@titleskripsi}"\\
             \vspace{1.0cm}
         \end{singlespace}
 
-            Telah dipertahankan di hadapan Panitia Ujian yang dibentuk dalam rangka Penyelesaian Studi Program Sarjana pada Program Studi {\@program} Jurusan {\@faculty} {\@university} dan dinyatakan telah memenuhi syarat kelulusan \\
+            Yang disusun oleh:
 
-            \vspace{0.2cm}
-            Menyetujui,
+            \vspace{1cm}
+            \begin{tabular}{ >{\centering\arraybackslash}m{4cm} }
+                \\
+                \\
+                \\
+                Haidar Dzaky Sumpena \\
+                NIM. 10201043
+            \end{tabular}
+
+            \vspace{2cm}
+            Telah diperiksa dan disetujui oleh dosen pembimbing:
             \vspace{0.2cm}
     \end{center}
 
     \begin{table}[h]
         \centering
-        \begin{tabular}{ >{\centering\arraybackslash}m{6cm}  m{2cm} >{\centering\arraybackslash}m{6cm} }
-            Pembimbing Utama & & Pembimbing Pertama \\
+        \begin{tabular}{ >{\centering\arraybackslash}m{8cm}  m{0cm} >{\centering\arraybackslash}m{8cm} }
+            Pembimbing Utama & & Pembimbing Pendamping \\
             & & \\
             & & \\
             & & \\
             & & \\
             & & \\
-            \underline{\@firstsupervisor} & & \underline{\@secondsupervisor} \\
-            NIP. \@firstsupervisorNIP & & NIP. \@secondsupervisorNIP
-        \end{tabular}
-
-        \vspace{1cm}
-        \begin{tabular}{ >{\centering\arraybackslash}m{6cm} }
-            Ketua Program Studi \\
-            \\
-            \\
-            \\
-            \\
-            \\
-            \underline{\@headprogram} \\
-            NIP. \@headprogramNIP
+            \@firstsupervisor & & \@secondsupervisor \\
+            NIPH. 100320240 \@firstsupervisorNIP & & NIP. 199303062022041001 \@secondsupervisorNIP
         \end{tabular}
     \end{table}
     \pagebreak

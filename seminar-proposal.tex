@@ -6,11 +6,10 @@
 \usepackage{caption}
 
 % Redefine caption format for regular tables
-\captionsetup[table]{position=top,justification=raggedright,
-singlelinecheck=false,labelsep=space}
+\captionsetup[table]{position=top,justification=raggedright}
 
 % Redefine caption format for longtables
-\captionsetup[longtable]{position=top,justification=raggedright,singlelinecheck=false,labelsep=space}
+\captionsetup[longtable]{position=top,justification=raggedright}
 
 % \pagestyle{fancy}
 % \rhead{Tugas Akhir Program Studi Sistem Informasi}
@@ -39,13 +38,15 @@ singlelinecheck=false,labelsep=space}
 
 \begin{document}
     \noindent
-    \textit{}
     \coverproposal
     \pagenumbering{roman}
 
     %===========================================================
     % Kata pengantar, abstract
     %-----------------------------------------------------------
+
+    \supervisorapprovalpage
+
     \addcontentsline{toc}{chapter}{KATA PENGANTAR}
     \input{include/kata-pengantar.tex}
     \pagebreak
