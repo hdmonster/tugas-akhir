@@ -1,0 +1,15 @@
+Kode, Persona, I want to, So that I can
+US-01, User, Login, Mengakses sistem sesuai dengan username dan password
+US-02, User, Logout, Keluar dari sistem melalui tombol logout
+US-03, User, Melihat data historis kecepatan mesin, Memastikan armada bergerak dengan kecepatan mesin yang sesuai
+US-04, User, Melihat data historis konsumsi bahan bakar, Melakukan kontrol bahan bakar
+US-05, User, Melihat data historis running hour, Memastikan operasi berjalan dengan optimal
+US-06, User, Melihat data log kecepatan mesin dalam interval 1 menit, Melihat detail ekcepatan pada waktu spesifik
+US-07, User, Mencetak laporan kecepata mesin harian, Mendapatkan laporan harian kecepatan mesin dengan format PDF
+US-08, User, Mencetak laporan harian konsumsi bahan bakar, Mendapatkan laporan harian konsumsi bahan bakar dengan format PDF
+US-09, User, Mengunduh data log kecepatan mesin, Mendapatkan log kecepatan mesin dengan format CSV
+US-10, Admin, Login, Mengakses sistem sesuai dengan username dan password
+US-11, Admin, Logout, Keluar dari sistem melalui tombol logout
+US-12, Admin, Mengelola data pengguna, Mengelola data pengguna yang dapat mengakses sistem
+US-13, Admin, Mengelola data kapals, Mengelola data profil kapal
+US-14, Admin, Mengelola data FCRV, Menetapkan nilai batas atas/bawah tiap kategori kecepatan

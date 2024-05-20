@@ -1,9 +1,6 @@
 \documentclass{lib/skripsi}
 
-\usepackage{blindtext}
-\usepackage{longtable}
-\usepackage{fancyhdr}
-\usepackage{caption}
+\usepackage{blindtext, caption, csvsimple, fancybox, longtable, pdflscape}
 
 % Redefine caption format for regular tables
 \captionsetup[table]{position=top,justification=raggedright}
@@ -22,14 +19,14 @@
 \fullname{Haidar Dzaky Sumpena}
 \idnum{10201043}
 
-\yearsubmit{2023}
+\yearsubmit{2024}
 \program{Sistem Informasi}
 \faculty{Matematika dan Teknologi Informasi}
 \university{Institut Teknologi Kalimantan}
 \city{Balikpapan}
 
 \firstsupervisor{Aidil Saputra Kirsan, S.Kom., M.Tr.Kom}
-\secondsupervisor{Henokh Lugo Hariyanto S.Si., M.Sc.}
+\secondsupervisor{Henokh Lugo Hariyanto, M.Sc.}
 % \firstexaminer{ - }
 % \secondexaminer{ - }
 %-----------------------------------------------------------
@@ -70,6 +67,10 @@
     \listoffigures
     \pagebreak
 
+    \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+    \listofappendices
+    \pagebreak
+
     \pagenumbering{arabic}
     %-----------------------------------------------------------
     % End Daftar isi, daftar gambar, daftar tabel
@@ -96,4 +97,14 @@
     % End Daftar Pustaka
     %===========================================================
 
+    %===========================================================
+    % Daftar Lampiran
+    %-----------------------------------------------------------
+    \appendix
+    \addcontentsline{toc}{chapter}{LAMPIRAN}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+    \input{include/lampiran.tex}
+    %-----------------------------------------------------------
+    % End Daftar Lampiran
+    %===========================================================
 \end{document}

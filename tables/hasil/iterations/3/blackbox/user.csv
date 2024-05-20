@@ -1,0 +1,6 @@
+Test Code, Test Case, Test Steps, Expected Result, Actual Result, Pass/Fail
+SM-T-UM-01, Membuat data user, 1. Mengakses sistem admin<br>2. Menekan tombol 'Add' pada komponen Sidebar di bagian Users<br>3. Mengisi form Nama, Username, dan Password<br>4. Menekan tombol Save, Sistem akan berpindah ke halaman Users dan menampilkan data yang telah diinput, Sesuai, PASSED
+SM-T-UM-02, Melihat data user, 1. Mengakses sistem admin<br>2. Menekan tombol 'Users' pada komponen Sidebar di bagian Users<br>3. Memilih user yang ingin dilihat dari tabel yang disediakan, Sistem berpindah ke halaman detail Users dan menampilkan data yang sesuai, Sesuai, PASSED
+SM-T-UM-03, Menghapus data user , 1. Mengakses sistem admin<br>2. Menekan tombol 'Users' pada komponen Sidebar di bagian Vessel<br>3. Memilih satu atau lebih data yang ingin dihapus<br>4. Memilih Action dari komponen dropdown<br>5. Menekan tombol 'Go', Halaman akan dimuat ulang dan data user telah terhapus, Sesuai, PASSED
+SM-T-UM-04, Menyunting data user, 1. Mengakses sistem admin<br>2. Menekan tombol 'Users' pada komponen Sidebar di bagian Users<br>3. Menekan nama user yang ingin disunting<br>4. Mengubah nilai form yang diinginkan<br>5. Menekan tombol 'Save', Sistem berpindah ke halaman Users dan menampilkan data yang telah disunting, Sesuai, PASSED
+

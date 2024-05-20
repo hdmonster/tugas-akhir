@@ -1,0 +1,4 @@
+kode, deskripsi, prioritas, estimasi waktu
+US-04, Mendapatkan informasi data historis rata-rata konsumsi bahan bakar dalam interval 1 jam selama 1 hari, 5, 3
+US-05, Mendapatkan informasi data historis running hour setiap tanggal, 4, 2
+US-06, Mendapatkan informasi data log kecepatan mesin dalam interval 1 menit, 4, 1

@@ -1,0 +1,4 @@
+Test Code, Test Case ,Test Steps, Expected Result ,Actual Result, Pass/Fail
+SM-T-RH-01, Melihat data historis, 1. Membuka halaman Running Hour, Sistem menampilkan data dengan rentang waktu 30 hari kebelakang ,Sesuai, PASSED
+SM-T-RH-02, Melakukan filter tanggal, 1. Membuka halaman Running Hour<br>2. Memilih tanggal melalui komponen datepicker, Sistem menampilkan data dengan rentang waktu yang dipilih, Sesuai, PASSED
+

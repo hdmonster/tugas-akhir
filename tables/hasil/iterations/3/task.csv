@@ -1,0 +1,7 @@
+kode, deskripsi, prioritas, estimasi waktu
+US-14 , Admin melakukan manajemen nilai batas atas/bawah keceptan mesin sesuai kategori operasi FCRV, 4, 1
+US-12 , Admin melakukan manajemen data pengguna, 3, 1
+US-13 , Admin melakukan manajemen data kapal, 3, 1
+US-10 , Admin melakukan login sebelum masuk ke sistem admin, 2, 1
+US-11 , Admin keluar dari sistem admin melalui tombol logout, 2 , 1
+

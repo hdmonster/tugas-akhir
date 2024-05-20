@@ -1,1 +1,434 @@
 \chapter{HASIL DAN PEMBAHASAN}
+
+\section{Perancangan (Exploration Phase)}
+
+\subsection{Requirements}
+
+Pada fase ini, seluruh kebutuhan pengguna akan dikumpulkan dalam bentuk user story. Seluruh user story akan diubah menjadi task yang dapat dikerjakan pada jangka waktu tertentu yang disebut dengan iterasi. Pada metode Extreme Programming, iterasi dapat berlangsung selama 1 hingga 2 pekan. Dalam penelitian ini, 1 iterasi akan ditetapkan berlangsung selama 1 pekan. User story pada penelitian ini dapat dilihat pada tabel dibawah.
+
+\input{tables/hasil/user-story}
+
+\subsection{Architecture Modelling}
+
+Dalam buku Fundamental of Software Architecture oleh (Mark Richards dan Neal Ford, 2020), arsitektur didefinisikan sebagai sebuah rangkaian dari keputusan yang akan menentukan struktur dan perilaku sistem. Pada metode XP, model arsitektur dibuat untuk mempertimbangkan berbagai solusi alternatif. Model arsitektur pada Sistem Monitoring dapat dilihat pada Gambar \ref{fig:archi-model-sm} .
+
+\begin{figure}[!h]
+    \includegraphics[width=.4\linewidth, center]{images/hasil/archi-model.png}
+    \caption{Metafor Model Arsitektur Sistem Monitoring}
+    \label{fig:archi-model-sm}
+\end{figure}
+
+Gambar di atas merupakan model arsitektur dengan style Service-based Architecture dengan pertimbangan bahwa sistem tidak hanya menyediakan gerbang api (API Gateway) untuk web dasbor saja, melainkan juga untuk perangkat IoT yang akan dipasang di kapal, disebut juga dengan 'IoT Nodes'. IoT Nodes dapat mengirimkan data dengan mengirimkan HTTP Request ke server melalui API Gateway yang telah diatur pada Module Service untuk meneruskan data ke database. Data yang telah tersimpan dapat diakses melalui Web UI yang terhubung dengan System Service melalui API Gateway. Selain mengakses data, sistem juga memungkinkan pengguna untuk dapat melakukan filter data dengan memberi input tanggal yang ditunjukkan oleh dua garis penghubung pada setiap obyek yang menghubungkan Web UI dengan Database.
+
+\subsection{Tools dan Teknologi}
+
+Selama pengembangan sistem, digunakan beberapa tools yang akan membantu proses tersebut serta pemilihan teknologi (techstack) untuk Sistem Monitoring yang sebelumnya telah dibahas pada Bab 2 dan Bab 3. Untuk tools yang digunakan dalam penelitian ini meliputi VSCode sebagai IDE, phpmyadmin untuk melakukan manajemen basis data, Figma untuk mendesain arsitektur, skema basis data, dan prototype, serta Apidog untuk pengujian API.
+
+\section{Perencanaan \textit{(Planning)}}
+
+\subsection{Rencana Awal \textit{(Initial Planning)}}
+
+Pada tahap ini, seluruh User Story akan menjadi kumpulan task yang akan disortir berdasarkan tingkat prioritas yang dinilai dari 1 hingga 5 dan estimasi waktu pengerjaannya dalam satuan hari. Seluruh rencana iterasi dapat dilihat pada Tabel \ref{tab:iteration-1} hingga Tabel \ref{tab:iteration-5} dibawah.
+
+Iterasi pertama difokuskan untuk mengelola data kecepatan mesin dan menampilkannya dalam bentuk grafik.
+
+\input{tables/hasil/initial-planning/iteration1.tex}
+
+Pada iterasi kedua, dilanjutkan pengembangan halaman Fuel Consumption, Running Hour, dan Data Log.
+
+\input{tables/hasil/initial-planning/iteration2.tex}
+
+Selanjutnya, pada iterasi ketiga dilakukan pengembangan sistem admin yang memungkinkan pengguna melakukan manajemen data seperti data pengguna, data kapal, dan data batas kecepatan pada setiap kategori operasional FCRV.
+
+\input{tables/hasil/initial-planning/iteration3.tex}
+
+Iterasi keempat berfokus pada pembuatan laporan harian kecepatan mesin dan konsumsi bahan bakar dalam format PDF.
+
+\input{tables/hasil/initial-planning/iteration4.tex}
+
+Terakhir, pada iterasi kelima dilakukan pengembangan sistem autentikasi dan juga ekspor data mentah kecepatan mesin dalam format CSV.
+
+\input{tables/hasil/initial-planning/iteration5.tex}
+
+\subsection{Perubahan \textit{(Changes)}}
+
+Selama pengerjaan berlangsung, terdapat beberapa umpan balik dari mitra yang mengakibatkan penambahan pada task. Sehingga, ini juga berdampak pada rencana iterasi yang sebelumnya telah dibuat. Secara garis besar, task yang bertambah adalah sistem admin untuk melakukan manajemen data kapal, manajemen data pengguna, manajemen data FCRV. Hasil akhir, terdapat task dengan total sebanyak 13 item yang dikerjakan selama 5 iterasi.
+
+\input{tables/hasil/changes.tex}
+
+Setelah mendapat kebutuhan awal, terdapat permintaan tambahan untuk membangun sistem admin agar mitra dapat lebih leluasa untuk melakukan konfigurasi data. Sistem admin meliputi manajemen data pengguna, data kapal, dan data FCRV. Setelah direkap di user story dan dilakukan skala prioritas, pengembagan Sistem Admin akan dilakukan pada iterasi 3.
+Pada iterasi kedua, terdapat permintaan untuk mencantumkan angka running hour pada halaman engine speed yang diposisikan dibawah angka kecepatan mesin seperti terlihat pada Gambar … . Sedangkan pada iterasi 5, terdapat permintaan untuk menambah 2 halaman, yakni Home dan OP41 Report. Halaman Home berisi seluruh kapal yang terdaftar dan Halaman OP41 Report berisi laporan konsumsi bahan bakar berdasarkan perhitungan dari kategori FCRV yang dapat dilihat pada Gambar ... dan Gambar ... secara berturut-turut.
+
+
+\section{Implementasi \textit{(Iteration to Release)}}
+
+Pada bagian ini, akan dijelaskan secara detail dari pengembangan sistem mulai dari Iterasi 1 hingga Iterasi 5 dan dilanjut dengan fase validasi melalui User Acceptance Test.
+
+\subsection{Iterasi 1}
+
+\subsubsection{Analisis}
+
+Pada tahap ini akan menghasilkan kebutuhan sistem. Kebutuhan sistem merupakan analisis yang dilakukan untuk mengetahui kebutuhan fungsional sistem. Kebutuhan fungsional sistem sendiri merupakan fungsionalitas yang harus tersedia di sistem sesuai kebutuhan stakeholder yang tertuang di user story. Aturan penomoran kebutuhan sistem dapat dilihat pada Tabel \ref{tab:aturan-penomoran} dan kebutuhan fugsional sistem pada Gambar \ref{fig:fr-es}.
+
+\begin{table}[!h]
+    \caption{Aturan Penomoran Kebutuhan Sistem}
+    \centering
+    \begin{tabular}
+        {
+            >{\centering\arraybackslash}p{0.2\textwidth}
+            >{\centering\arraybackslash}p{0.4\textwidth}
+        }
+        \toprule
+
+        Kode &
+        Keterangan \\ [1ex]
+
+        \midrule
+
+        SM- & Sistem Monitoring \\
+        -F- & Kebutuhan Fungsional \\
+        -\{x\} & Nomor Urutan Kode Kebutuhan \\
+
+        \bottomrule
+    \end{tabular}
+    \label{tab:aturan-penomoran}
+\end{table}
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/1/fr-es.png}
+    \caption{Kebutuhan Fungsional Engine Speed}
+    \label{fig:fr-es}
+\end{figure}
+
+\newpage
+
+\subsubsection{Desain}
+Berikut merupakan desain \textit{wireframe low fidelity} pada halaman Engine Speed. Pada halaman ini, pengguna dapat melihat angka kecepatan mesin terakhir dan nilai rata-rata dengan interval 1 jam dalam jangka waktu satu hari yang disajikan dalam bentuk grafik. Jangka waktu dapat dipilih melalui filter yang akan disediakan pada area komponen grafik. Seluruh navigasi pada sistem dapat dilakukan dengan memilih komponen Navbar atau Sidebar.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/1/lofi-es.png}
+    \caption{Wireframe Halaman Engine Speed}
+    \label{fig:lofi-es}
+\end{figure}
+
+\subsubsection{Coding}
+
+Berdasarkan desain low fidelity pada tahap desain maka dilakukan implementasi pengkodean tampilan halaman Engine Speed yang dapat dilihat pada Gambar \ref{fig:fe-es}. Halaman Engine Speed merupakan halaman untuk melihat kecepatan mesin terakhir dan histori tren dari kecepatan mesin yang disajikan dalam bentuk grafik garis. Pengguna dapat melakukan filter tanggal untuk mendapatkan data sesuai dengan batas waktu yang ditentukan.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/1/fe-es.png}
+    \caption{Frontend Halaman Engine Speed}
+    \label{fig:fe-es}
+\end{figure}
+
+Halaman ini sepenuhnya menggunakan Client Side Rendering (CSR). Hal ini memungkinkan pengguna untuk melakukan filter data tanpa perlu memuat ulang halaman Engine Speed sehingga memaksimalkan pengalaman penggunaan sistem.
+
+\newpage
+
+\subsubsection{Whitebox Testing}
+Pengujian dilakukan dengan membuat Unit Test yang akan dijalankan selama pengembangan sebelum repositori akhirnya diunggah ke codebase atau GitHub. Unit test dilakukan pada pengembagan API yang merupakan bagian dari Data Processing Layer dan Network Layer. Hal ini agar data yang akan ditampilkan pada antarmuka sistem merupakan data yang valid sehingga dapat memberikan wawasan yang tepat. Unit test yang dibuat dapat dilihat pada Gambar ... .
+
+\begin{landscape}
+
+    \subsubsection{Blackbox Testing}
+
+    Setelah repositori telah terupdate, mitra dapat langsung mengakses sistem untuk menguji fungsionalitas fitur yang telah dikerjakan pada iterasi tersebut.
+
+    \input{tables/hasil/blackbox-numbering.tex}
+
+    Test case yang dibuat untuk halaman Engine Speed memastikan grafik telah ditampilkan dengan sesuai dan ketika pengguna melakukan filter tanggal, data grafik akan terubah sesuai dengan data tanggal yang diinput. Berikut hasil test case untuk iterasi 1
+
+    \input{tables/hasil/iterations/1/blackbox/engine-speed.tex}
+
+\end{landscape}
+
+\subsection{Iterasi 2}
+
+\subsubsection{Analisis}
+
+Pada iterasi ini, dilanjutkan pengembangan fitur pada halaman Fuel Consumption, Running Hour, dan Data Log. Untuk waktu pengerjaan relatif lebih singkat dibandingkan dengan iterasi pertama karena pada Halaman Fuel Consumption dan Running Hour memiliki algoritma yang identik. Kebutuhan fungsional Fuel Consumption, Running Hour, dan Data Log secara berturut-turut dirincikan pada Gambar \ref{fig:fr-fc}, Gambar \ref{fig:fr-rh}, dan Gambar \ref{fig:fr-dl}.
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/2/fr-rh.png}
+    \caption{Kebutuhan Fungsional Fuel Consumption}
+    \label{fig:fr-fc}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/2/fr-rh.png}
+    \caption{Kebutuhan Fungsional Running Hour}
+    \label{fig:fr-rh}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/2/fr-dl.png}
+    \caption{Kebutuhan Fungsional Data Log}
+    \label{fig:fr-dl}
+\end{figure}
+
+\newpage
+
+\subsubsection{Desain}
+
+Berikut merupakan desain wireframe low fidelity pada halaman Fuel Consumption, Running Hour, dan Data Log. Pada halaman Fuel Consumption terdapat informasi singkat mengenai penggunaan bahan bakar tiap mesin dan nilai bahan bakar perkategori operasi FCRV. Lalu terdapat nilai jumlah bahan bakar yang dirata-ratakan dengan interval satu jam dalam rentang waktu satu hari. Pengguna dapat menentukan hari yang diinginkan dengan melakukan filter tanggal yang tersedia di area komponen grafik.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/2/lofi-fc.png}
+    \caption{Wireframe Halaman Fuel Consumption}
+    \label{fig:lofi-fc}
+\end{figure}
+
+Pada halaman running hour, data akan disajikan dalam format tabel untuk memudahkan pengguna dalam membaca data running hour mesin hari ke hari. Pengguna juga dapat melakukan filter pada rentang tanggal yang diinginkan dengan batas maksimal 30 hari untuk menjaga stabilitas performa dari sistem.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/2/lofi-rh.png}
+    \caption{Wireframe Halaman Running Hour}
+    \label{fig:lofi-rh}
+\end{figure}
+
+\newpage
+
+Pada Halaman Data Log, data juga disajikan dalam format tabel dengan rentang interval satu menit. Pengguna dapat melakukan filter pada rentang tanggal yang diinginkan dengan batas maksimal 30 hari. Selain dari itu, pengguna juga dapat mengekspor data tersebut dalam format Comma Separated Value (CSV) yang akan dijelaskan lebih lanjut pada Iterasi 5.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/2/lofi-dl.png}
+    \caption{Frontend Halaman Data Log}
+    \label{fig:lofi-dl}
+\end{figure}
+
+\newpage
+
+\subsubsection{Coding}
+
+Halaman Fuel Consumption merupakan halaman untuk memantau konsumsi bahan bakar berdasarkan kategori operasi FCRV dan histori tren dari bahan bakar yang disajikan dalam bentuk grafik batang. Pengguna dapat melakukan filter tanggal untuk mendapatkan data sesuai dengan batas waktu yang ditentukan.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/2/fe-fc.png}
+    \caption{Frontend Halaman Fuel Consumption}
+    \label{fig:fe-fc}
+\end{figure}
+
+Halaman ini sepenuhnya menggunakan Client Side Rendering (CSR). Hal
+ini memungkinkan pengguna untuk melakukan filter data tanpa perlu memuat ulang
+halaman Fuel Consumption sehingga memaksimalkan pengalaman penggunaan sistem.
+
+\newpage
+
+Halaman Running Hour merupakan halaman untuk memantau running hour tiap mesin yang disajikan dalam format tabel. Pengguna dapat melakukan filter rentang tanggal untuk mendapatkan data sesuai dengan batas waktu yang ditentukan. Halaman ini menggunakan Client Side Rendering (CSR) dikarenakan terdapat filter pencarian tanggal pada komponen data table.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/2/fe-rh.png}
+    \caption{Frontend Halaman Running Hour}
+    \label{fig:fe-rh}
+\end{figure}
+
+Halaman Data Log merupakan halaman untuk mendapatkan data mentah kecepatan mesin yang disajikan dalam format tabel. Pengguna dapat melakukan filter rentang tanggal untuk mendapatkan data sesuai dengan batas waktu yang ditentukan. Serupa dengan Halaman Running Hour, halaman ini juga menggunakan Client Side Rendering (CSR) dikarenakan terdapat filter pencarian tanggal dan waktu pada komponen data table.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/2/fe-dl.png}
+    \caption{Wireframe Halaman Data Log}
+    \label{fig:fe-dl}
+\end{figure}
+
+\newpage
+
+\subsubsection{Whitebox Testing}
+
+Pada tahap ini, dilakukan pengujian unit test pada halaman Fuel Consumption, Running Hour, dan Data Log. Daftar test case dan hasilnya dapat dilihat pada Gambar ... dan Gambar ... .
+
+\begin{landscape}
+    \subsubsection{Blackbox Testing}
+    Pada tahap ini, dilakukan pengujian oleh mitra pada halaman Fuel Consumption, Running Hour, dan Data Log.
+
+    \input{tables/hasil/iterations/2/blackbox/fuel-cons.tex}
+    \input{tables/hasil/iterations/2/blackbox/running-hour.tex}
+    \newpage
+    \input{tables/hasil/iterations/2/blackbox/data-log.tex}
+
+\end{landscape}
+
+\subsection{Iterasi 3}
+
+\subsubsection{Analisis}
+
+Pada iterasi ini, dilanjutkan pengembangan Sistem Admin yang telah disediakan oleh Django Administration melalui model yang dibuat. Kebutuhan fungsional Sistem Admin meliputi FCRV Threshold Config, User Management, dan Vessel Management yang secara berturut-turut dirincikan pada Gambar \ref{fig:fr-fcrv}, Gambar \ref{fig:fr-user}, dan Gambar \ref{fig:fr-vessel}.
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/3/fr-fcrv.png}
+    \caption{Kebutuhan Fungsional FCRV Threshold Config}
+    \label{fig:fr-fcrv}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/3/fr-user.png}
+    \caption{Kebutuhan Fungsional User Management}
+    \label{fig:fr-user}
+\end{figure}
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/3/fr-vessel.png}
+    \caption{Kebutuhan Fungsional Vessel Management}
+    \label{fig:fr-vessel}
+\end{figure}
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/3/fr-login.png}
+    \caption{Kebutuhan Fungsional Admin Login}
+    \label{fig:fr-login-admin}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/3/fr-fcrv.png}
+    \caption{Kebutuhan Fungsional Admin Logout}
+    \label{fig:fr-logout-admin}
+\end{figure}
+
+\newpage
+
+\subsubsection{Desain}
+
+Pada Sistem Admin, tidak dilakukan desain wireframe dikarenakan fitur bawaan framewok Django yang telah menyediakan Sistem Admin secara otomatis bernama Django administration.
+
+\subsubsection{Coding}
+
+Halaman Admin memungkinkan pengguna untuk melakukan operasi CRUD (create, read, update, dan delete) pada data pengguna, kapal, dan FCRV threshold. Hasil halaman yang dibuat oleh Django administration dapat dilihat pada Gambar ... hingga Gambar ... .
+
+\subsubsection{Whitebox Testing}
+
+Pada Django administration, seluruh komponen web dihasilkan oleh library bawaan dari package restapi yang telah diabstraksi sedemikian rupa dan telah memiliki alur pengujian sendiri. Sehingga, tidak dimungkinkan untuk dilakukan pengujian melalui unit test yang dibuat sendiri.
+
+\begin{landscape}
+    \subsubsection{Blackbox Testing}
+
+    \input{tables/hasil/iterations/3/blackbox/user.tex}
+    \newpage
+    \input{tables/hasil/iterations/3/blackbox/vessel.tex}
+    \newpage
+    \input{tables/hasil/iterations/3/blackbox/autentikasi.tex}
+\end{landscape}
+
+\subsection{Iterasi 4}
+
+\subsubsection{Analisis}
+
+Pada iterasi 4, difokuskan untuk membuat fitur spesifik seperti membuat laporan kecepatan mesin harian dan laporan konsumsi bahan bakar harian yang secara berturut-turut terdapat pada Halaman Engine Speed dan Fuel Consumption. Kebutuhan fungsional dapat dilihat pada Gambar \ref{fig:fr-generate-es-report} dan Gambar \ref{fig:fr-generate-fuel-report}.
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/4/fr-generate-es-report.png}
+    \caption{Kebutuhan Fungsional Generate Engine Speed Daily Report}
+    \label{fig:fr-generate-es-report}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=.8\linewidth, center]{images/hasil/iterations/4/fr-generate-fuel-report.png}
+    \caption{Kebutuhan Fungsional Generate Fuel Consumption Daily Report}
+    \label{fig:fr-generate-fuel-report}
+\end{figure}
+
+\subsubsection{Desain}
+
+Pada tahap ini, dilakukan desain laporan bahan bakar yang kemudian dapat dibuat secara dinamis oleh sistem. Laporan kecepatan mesin dan bahan bakar dapat dilihat pada Gambar \ref{fig:es-report} dan Gambar \ref{fig:fc-report}.
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/4/es-report.png}
+    \caption{Contoh Laporan Kecepatan Mesin}
+    \label{fig:es-report}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/4/fc-report.png}
+    \caption{Contoh Laporan Konsumsi Bahan Bakar}
+    \label{fig:fc-report}
+\end{figure}
+
+\newpage
+
+\subsubsection{Coding}
+\subsubsection{Whitebox Testing}
+
+\begin{landscape}
+    \subsubsection{Blackbox Testing}
+
+    \input{tables/hasil/iterations/4/blackbox/generate-es-report.tex}
+    \newpage
+    \input{tables/hasil/iterations/4/blackbox/generate-fuel-report.tex}
+\end{landscape}
+
+\subsection{Iterasi 5}
+
+\subsubsection{Analisis}
+
+Pada iterasi terakhir, dilakukan pengembangan fitur ekspor data yang terdapat pada Halaman Data Log, autentikasi sistem, Halaman OP41 Report, dan Halaman Overview. Kebutuhan fungsional dapat dilihat pada Gambar \ref{fig:fr-export-data} hingga Gambar \ref{fig:fr-op41}
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/5/fr-export-data.png}
+    \caption{Kebutuhan Fungsional Ekspor Data}
+    \label{fig:fr-export-data}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/5/fr-login-user.png}
+    \caption{Kebutuhan Fungsional User Login}
+    \label{fig:fr-login-user}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/5/fr-logout-user.png}
+    \caption{Kebutuhan Fungsional User Logout}
+    \label{fig:fr-logout-user}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/5/fr-op41.png}
+    \caption{Kebutuhan Fungsional OP41 Report}
+    \label{fig:fr-op41}
+\end{figure}
+
+\newpage
+
+\subsubsection{Desain}
+
+Dilakukan desain pada Halaman Login, OP41 Report, dan Overview yang dapat dilihat pada Gambar \ref{fig:lofi-login}, Gambar \ref{fig:lofi-op41} dan Gambar \ref{fig:lofi-overview} secara berturut-turut.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/5/lofi-login.png}
+    \caption{Wireframe Halaman Login}
+    \label{fig:lofi-login}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/1/lofi-op41.png}
+    \caption{Wireframe Halaman OP41 Report}
+    \label{fig:lofi-op41}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/5/lofi-overview.png}
+    \caption{Wireframe Halaman Overview}
+    \label{fig:lofi-overview}
+\end{figure}
+
+\newpage
+
+\subsubsection{Coding}
+
+Halaman OP41 memuat informasi running hour dan fuel consumption pada tiap kategori operasi berdasarkan Dokumen FCRV yang dapat menjadi acuan awak kapal untuk mengisi laporan. Jika data belum masuk semua maka ditampilkan alert agar awak kapal tidak mengisi laporan sebelum data pada hari tersebut telah tersinkron. Halaman OP41 dapat dilihat pada Gambar \ref{fig:fe-op41}.
+
+\begin{figure}[!h]
+    \includegraphics[width=1\linewidth, center]{images/hasil/iterations/5/fe-op41.png}
+    \caption{Frontend OP41 Report}
+    \label{fig:fe-op41}
+\end{figure}
+
+\newpage
+
+\subsubsection{Whitebox Testing}
+
+\begin{landscape}
+    \subsubsection{Blackbox Testing}
+
+    \input{tables/hasil/iterations/5/blackbox/export-data.tex}
+    \newpage
+    \input{tables/hasil/iterations/3/blackbox/autentikasi.tex}
+
+\end{landscape}

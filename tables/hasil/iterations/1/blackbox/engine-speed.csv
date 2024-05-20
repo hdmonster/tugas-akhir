@@ -1,0 +1,3 @@
+Test Code, Test Case, Test Steps, Expected Result, Actual Result, Pass/Fail
+SM-T-ES-01, Melihat data historis harian, 1. Memilih kapal yang ingin dilihat 2. Membuka halaman Engine Speed, Sistem menampilkan trend data kecepatan melalui grafik garis pada hari sistem diakses, Sesuai, PASSED
+SM-T-ES-02, Melakukan filter tanggal, 1. Memilih kapal yang ingin dilihat 2. Membuka halaman Engine Speed 3. Memilih tanggal melalui komponen datepicker, Sistem menampilkan trend data kecepatan melalui line chart pada hari yang dipilih, Sesuai, PASSED

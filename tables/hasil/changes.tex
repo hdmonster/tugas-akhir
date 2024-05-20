@@ -1,0 +1,35 @@
+\begin{longtable}[!h]
+    {
+            p{0.15\textwidth}
+            p{0.4\textwidth}
+            p{0.2\textwidth}
+            p{0.2\textwidth}
+    }
+    \caption{Umpan Balik Selama Pengembangan}
+    \label{tab:feedback} \\
+
+    \hline
+        \bfseries No &
+        \bfseries Umpan Balik &
+        \bfseries Iterasi &
+        \bfseries Status \\ [0.5ex]
+    \hline
+
+    \endfirsthead
+
+    \hline
+        \bfseries No &
+        \bfseries Umpan Balik &
+        \bfseries Iterasi &
+        \bfseries Status \\ [0.5ex]
+    \hline
+    \endhead % all the lines above this will be repeated on every page
+    \hline
+
+    \csvreader[
+        late after line=\\,
+        before reading={\catcode`\#=12},after reading={\catcode`\#=6}
+    ]{tables/hasil/changes.csv}{1=\no, 2=\feedback, 3=\i, 4=\status}{\no & \feedback & \i & \status} \\
+
+    \bottomrule
+\end{longtable}

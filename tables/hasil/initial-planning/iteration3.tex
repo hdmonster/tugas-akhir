@@ -1,0 +1,36 @@
+\begin{longtable}[!h]
+    {
+            p{0.2\textwidth}
+            p{0.4\textwidth}
+            >{\centering\arraybackslash}p{0.15\textwidth}
+            >{\centering\arraybackslash}p{0.15\textwidth}
+    }
+    \caption{Rencana Iterasi 3}
+    \label{tab:iteration-3} \\
+
+    \hline
+        \bfseries \textit{Kode User Story} &
+        \bfseries \textit{Deskripsi Task} &
+        \bfseries \textit{Prioritas} &
+        \bfseries \textit{Estimasi Waktu} \\ [0.5ex]
+    \hline
+
+    \endfirsthead
+
+    \hline
+        \bfseries \textit{Kode User Story} &
+        \bfseries \textit{Deskripsi} &
+        \bfseries \textit{Prioritas} &
+        \bfseries \textit{Estimasi Waktu} \\ [0.5ex]
+    \hline
+    \endhead % all the lines above this will be repeated on every page
+    \hline
+
+    \csvreader[
+        late after line=\\,
+        before reading={\catcode`\#=12},after reading={\catcode`\#=6}
+    ]{tables/hasil/iterations/3/task.csv}
+    {1=\K, 2=\D, 3=\P, 4=\T}{\K & \D & \P & \T} \\
+
+    \bottomrule
+\end{longtable}
