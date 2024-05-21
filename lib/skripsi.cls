@@ -545,7 +545,7 @@
 
     \begin{table}[h]
         \centering
-        \begin{tabular}{ >{\centering\arraybackslash}m{8cm}  m{0cm} >{\centering\arraybackslash}m{8cm} }
+        \begin{tabular}{ m{8cm} m{0cm} m{8cm} }
             Pembimbing Utama & & Pembimbing Pendamping \\
             & & \\
             & & \\
@@ -553,7 +553,7 @@
             & & \\
             & & \\
             \@firstsupervisor & & \@secondsupervisor \\
-            NIPH. 100320240 \@firstsupervisorNIP & & NIP. 199303062022041001 \@secondsupervisorNIP
+            NIPH. \@firstsupervisorNIP & & NIP. \@secondsupervisorNIP
         \end{tabular}
     \end{table}
     \pagebreak
