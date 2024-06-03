@@ -1,3 +1,3 @@
 Test Code , Test Case , Test Steps , Expected Result , Actual Result , Pass/Fail
 SM-T-FC-01 , Melihat data historis harian , 1. Membuka halaman Fuel Consumption , Sistem menampilkan data dalam bentuk grafik dengan rentang waktu jam 0 hingga 23 yang telah dirata-rata hari ini, Sesuai, PASSED
-SM-T-FC-02 , Melakukan filter tanggal , 1. Membuka halaman Fuel Consumption<br>2. Memilih tanggal melalui komponen datepicker , Sistem menampilkan data sesuai dengan tanggal yang dipilih, Sesuai, PASSED
+SM-T-FC-02 , Melakukan filter tanggal , 1. Membuka halaman Fuel Consumption  2. Memilih tanggal melalui komponen datepicker , Sistem menampilkan data sesuai dengan tanggal yang dipilih, Sesuai, PASSED
