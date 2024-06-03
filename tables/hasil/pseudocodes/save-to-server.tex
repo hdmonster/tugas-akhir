@@ -1,0 +1,37 @@
+\begin{longtable}[!h]
+  {
+          p{0.9\textwidth}
+  }
+  \caption{Pseudocode Pengiriman Data Ke Server}
+  \label{tab:pseudocode-save-to-server} \\
+
+  \hline
+      \bfseries Pseudocode \\ [0.5ex]
+  \hline
+
+  \endfirsthead
+
+  \hline
+      \bfseries Pseudocode \\ [0.5ex]
+  \hline
+  \endhead % all the lines above this will be repeated on every page
+
+  WHILE TRUE \\
+  \hspace{5mm} IF connected to internet THEN \\
+  \hspace{10mm} GET unsynchronized engine data \\
+  \hspace{10mm} SET data to payload \\
+  \hspace{10mm} SEND payload to server with data rate of 10 \\
+  \hspace{10mm} RETURN response from server \\
+  \hspace{15mm} IF response is success THEN \\
+  \hspace{20mm} SET synchronized flag to TRUE \\
+  \hspace{20mm} DISPLAY success message \\
+  \hspace{15mm} ELSE \\
+  \hspace{20mm} DISPLAY error message \\
+  \hspace{5mm} ELSE \\
+  \hspace{10mm} DISPLAY no internet connection \\
+  \hspace{5mm} DELAY 20 minutes \\
+  \hspace{5mm} ENDIF \\
+  ENDWHILE \\
+
+  \bottomrule
+\end{longtable}

@@ -1,0 +1,30 @@
+\begin{longtable}[!h]
+  {
+          p{0.9\textwidth}
+  }
+  \caption{Pseudocode Halaman Engine Speed}
+  \label{tab:pseudocode-fe} \\
+
+  \hline
+      \bfseries Pseudocode \\ [0.5ex]
+  \hline
+
+  \endfirsthead
+
+  \hline
+      \bfseries Pseudocode \\ [0.5ex]
+  \hline
+  \endhead % all the lines above this will be repeated on every page
+
+  INIT engine speed data from API based on vessel code and date filter \\
+  DISPLAY loading animation \\
+  IF response is success THEN \\
+  \hspace{5mm} SET returned engine data \\
+  \hspace{5mm} DISPLAY latest engine data and running hour to card component \\
+  \hspace{5mm} DISPLAY engine data trend to line chart \\
+  ELSE \\
+  \hspace{5mm} DISPLAY error screen \\
+  ENDIF \\
+
+  \bottomrule
+\end{longtable}

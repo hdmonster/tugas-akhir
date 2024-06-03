@@ -1,0 +1,30 @@
+\begin{longtable}[!h]
+  {
+          p{0.9\textwidth}
+  }
+  \caption{Pseudocode Pengambilan Data Kecepatan Mesin Pada IoT Node}
+  \label{tab:pseudocode-iot-node} \\
+
+  \hline
+      \bfseries Pseudocode \\ [0.5ex]
+  \hline
+
+  \endfirsthead
+
+  \hline
+      \bfseries Pseudocode \\ [0.5ex]
+  \hline
+  \endhead % all the lines above this will be repeated on every page
+
+  WHILE TRUE \\
+  \hspace{5mm} READ portside speed via PWM \\
+  \hspace{5mm} SET portside speed \\
+  \hspace{5mm} READ starboard speed via PWM \\
+  \hspace{5mm} SET starboard speed \\
+  \hspace{5mm} SET datetime \\
+  \hspace{5mm} WRITE engine data to local database \\
+  \hspace{5mm} DELAY 60 seconds \\
+  ENDWHILE \\
+
+  \bottomrule
+\end{longtable}
