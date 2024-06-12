@@ -1,0 +1,2 @@
+Test Code, Test Case, Test Steps, Expected Result, Actual Result , Pass/Fail
+SM-BT-HM-01 , Melihat seluruh kapal yang terdaftar , 1. Membuka halaman utama sistem, Sistem akan menampilkan seluruh data kapal dalam bentuk card, Sesuai, Pass

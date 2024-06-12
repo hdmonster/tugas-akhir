@@ -1,0 +1,3 @@
+Test Code , Test Case , Test Steps, Expected Result, Actual Result , Pass/Fail
+SM-BT-FCRV-01 , Login dengan akun yang terdaftar, 1. Mengakses sistem admin 2. Mengisi form username dan password yang terdaftar 3. Menekan tombol 'Login', Halaman akan berpindah ke halaman utama, Sesuai, Pass
+SM-BT-FCRV-02 , Login dengan akun yang tidak terdaftar, 1. Mengakses sistem admin 2. Mengisi form username dan password yang tidak terdaftar 3. Menekan tombol 'Login' , Sistem akan menampilkan pesan error di halaman login , Sesuai, Pass

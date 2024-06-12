@@ -16,15 +16,18 @@
   \hline
   \endhead % all the lines above this will be repeated on every page
 
-  INIT engine speed data from API based on vessel code and date filter \\
-  DISPLAY loading animation \\
-  IF response is success THEN \\
-  \hspace{5mm} SET returned engine data \\
-  \hspace{5mm} DISPLAY latest engine data and running hour to card component \\
-  \hspace{5mm} DISPLAY engine data trend to line chart \\
-  ELSE \\
-  \hspace{5mm} DISPLAY error screen \\
-  ENDIF \\
+  \begin{algorithmic}[1]
+    \State $\Call{getInitialData}{vessel code, date filter}$
+    \State $response \gets \Call{getInitialData}{vessel code, date filter}$
+    \State \Output loading animation
+    \If{response = 'success'}
+      \State $data \gets response.data$
+      \State \Output latest engine data and running hour to card component
+      \State \Output engine data trend to line chart
+    \Else
+      \State \Output error screen
+    \EndIf
+  \end{algorithmic} \\
 
   \bottomrule
 \end{longtable}

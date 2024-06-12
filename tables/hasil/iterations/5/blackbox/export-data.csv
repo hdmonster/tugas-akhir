@@ -1,5 +1,0 @@
-Test Code, Test Case, Test Steps, Expected Result, Actual Result , Pass/Fail
-SM-T-DL-04 , Ekspor data dalam rentang waktu yang berbeda , 1. Membuka halaman Data Log 2. Menekan tombol 'Export Data' 3. Memilih tanggal yang berbeda pada input From dan To 4. Menekan tombol 'Export', Data yang diunduh akan memuat data sesuai dengan rentang tanggal yang dipilih dan memiliki format sesuai dengan yang dipilih , Sesuai, PASSED
-SM-T-DL-03 , Ekspor data dalam rentang waktu yang sama, 1. Membuka halaman Data Log 2. Menekan tombol 'Export Data' 3. Memilih tanggal yang sama pada input From dan To 4. Menekan tombol 'Generate', Data yang diunduh akan memuat data sesuai dengan tanggal yang dipilih dan memiliki format sesuai dengan yang dipilih, Sesuai, PASSED
-SM-T-DL-05 , Tanggal input To lebih rendah dari From, 1. Membuka halaman Data Log 2. Menekan tombol 'Export Data' 3. Memilih tanggal input From 4. Memilih tanggal yang lebih rendah pada input To 4. Menekan tombol 'Export' , Sistem akan menampilkan error tanggal To tidak dapat lebih rendah dari From, Sesuai, PASSED
-

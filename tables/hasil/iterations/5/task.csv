@@ -1,5 +1,6 @@
 kode, deskripsi, prioritas, estimasi waktu
-US-09 , Mengunduh seluruh log data dari modul dengan format CSV , 3 , 2
-US-01 , Sistem login agar hanya pengguna dengan terautentikasi yang dapat mengaskses sistem , 3 , 1
-US-02 , Keluar dari sistem melalui tombol logout, 3 , 1
+US-16 , Menampilkan data konsumsi bahan bakar dan running hour yang ditampilkan berdasarkan kategori operasi dari Dokumen FCRV, 2 , 2
+US-17 , Menampilkan seluruh data kapal yang terdaftar, 2 , 1
+US-01 , Sistem login agar hanya pengguna dengan terautentikasi yang dapat mengaskses sistem , 2 , 1
+US-02 , Keluar dari sistem melalui tombol logout, 2 , 1
 

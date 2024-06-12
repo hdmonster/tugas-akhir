@@ -1,0 +1,4 @@
+Test Code, Test Case, Function, Expected Result, Actual Result, Pass/Fail
+SM-WT-ES-01, Terdapat data kecepatan mesin di basis data, Engine Speed, Mengembalikan respon sesuai dengan nilai kalkulasi, Sesuai, Pass
+SM-WT-ES-02, Tidak terdapat data kecepatan mesin di basis data, Engine Speed, Mengembalikan respon dengan nilai 0, Sesuai, Pass
+

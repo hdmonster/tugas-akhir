@@ -1,0 +1,3 @@
+Test Code, Test Case, Test Steps, Expected Result, Actual Result , Pass/Fail
+SM-BT-OV-01 , Melihat ringkasan data kapal, 1. Membuka halaman Overview, Sistem akan menampilkan seluruh data pada komponen yang tersedia, Sesuai, Pass
+SM-BT-OV-02 , Melakukan filter tanggal, 1. Membuka halaman Overview 2. Memilih rentang tanggal 3. Menekan tombol 'Apply', Sistem akan menampilkan seluruh data pada komponen yang tersedia berdasarkan rentang tanggal yang dipilih, Sesuai, Pass

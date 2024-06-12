@@ -8,7 +8,7 @@
 % Modified by:
 % Dir Sulaiman
 % https://github.com/dirsulaiman/skripsi
-% 
+%
 % License:
 % BSD 3-Clause "New" or "Revised" License
 % https://github.com/dirsulaiman/skripsi/blob/master/LICENSE
@@ -20,7 +20,7 @@
 \ProvidesClass{lib/journal}
 \LoadClass[twoside,twocolumn, a4paper]{article}
 
-\RequirePackage{blindtext} % Package to generate dummy text throughout this template 
+\RequirePackage{blindtext} % Package to generate dummy text throughout this template
 \RequirePackage{indentfirst}
 
 % \RequirePackage[sc]{mathpazo} % Use the Palatino font
@@ -75,7 +75,7 @@
 % \RequirePackage[font=small, labelfont={it},textfont={it}, justification=centering]{caption}
 
 % Setup label of enumerate item
-\RequirePackage{enumitem} 
+\RequirePackage{enumitem}
 
 % use listings for code script
 \RequirePackage{listings}

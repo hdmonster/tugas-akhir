@@ -326,6 +326,17 @@
 %===========================================================
 % Define Cover Seminar Proposal/Hasil
 %-----------------------------------------------------------
+\def\blankpage{%
+      \clearpage%
+      \thispagestyle{empty}%
+      \addtocounter{page}{-1}%
+      \vspace*{\fill}%
+      \begin{center}%
+        \textit{Halaman ini sengaja dikosongkan}%
+      \end{center}%
+      \vspace*{\fill}%
+      \clearpage}
+
 \def\coverproposal{
     \thispagestyle{empty}
     \pagenumbering{roman}

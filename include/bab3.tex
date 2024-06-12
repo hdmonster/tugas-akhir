@@ -2,7 +2,7 @@
 
 \section{Garis Besar Penelitian}
 
-Secara garis besar, penelitian ini akan melaksanakan pengembangan sistem monitoring mesin diesel berbasis \textit{IoT} yang akan diuji pada PT Bisma Jaya untuk meningkatkan efektivitas operasi dengan menekankan kecepatan minimum pada armada dan efisiensi biaya bahan bakar dengan memantau jumlah bahan bakar yang digunakan setiap harinya. Tampilan web akan dikembangkan menggunakan framework NextJS berbasis JavaScript dan sistem \textit{backend} menggunakan framework Django berbasis Python. Pengembangan sistem ini akan menggunakan metode \textit{Extreme Programming} yang memiliki tahapan sebagai berikut: \textit{Exploration Phase}, \textit{Planning Phase}, \textit{Iteration to Release Phase}, \textit{Productionizing Phase}, \textit{Maintenance Phase}, dan \textit{Death Phase}.
+Secara garis besar, penelitian ini akan melaksanakan pengembangan sistem monitoring mesin diesel berbasis \textit{IoT} yang akan diuji pada PT Bisma Jaya untuk meningkatkan efektivitas operasi dengan menekankan kecepatan minimum pada armada dan efisiensi biaya bahan bakar dengan memantau jumlah bahan bakar yang digunakan setiap harinya. Tampilan web akan dikembangkan menggunakan \textit{framework} NextJS berbasis JavaScript dan sistem \textit{backend} menggunakan \textit{framework} Django berbasis Python. Pengembangan sistem ini akan menggunakan metode \textit{Extreme Programming} yang memiliki tahapan sebagai berikut: \textit{Exploration Phase}, \textit{Planning Phase}, \textit{Iteration to Release Phase}, \textit{Productionizing Phase}, \textit{Maintenance Phase}, dan \textit{Death Phase}.
 
 \section{Diagram Alir Penelitian}
 
@@ -39,7 +39,7 @@ Pada tahap ini dilakukan studi literatur dengan mengumpulkan berbagai referensi 
     \label{fig:system-archi}
 \end{figure}
 
-Gambar diatas merupakan arsitektur dari Sistem Monitoring berbasis IoT yang akan dikembangkan. Pertama, perangkat IoT akan dipasang di kapal untuk mengumpulkan data dari sensor. Data ini kemudian akan dikirim oleh \textit{router}/modem LTE menuju server melalui API yang telah dibuat dan disimpan ke dalam basis data. Sebelum ditampilkan di aplikasi web, data ini akan diproses terlebih dahulu di \textit{Data Processing Layer} sehingga menghasilkan wawasan seperti data \textit{running hour} mesin, tren data kecepatan mesin, dan tren data konsumsi bahan bakar. Di layer terakhir, data akan ditampilkan dalam bentuk grafik untuk menganalisis tren data kecepatan dan konsumsi bahan bakar serta log data untuk mendapatkan informasi spesifik pada rentang waktu tertentu. Pada penelitian ini, difokuskan pada pengembangan untuk \textit{Network Layer}, \textit{Data Processing Layer}, dan \textit{App Layer} berdasarkan arsitektur IoT yang dibahas pada bab sebelumnnya.
+Gambar diatas merupakan arsitektur dari Sistem Monitoring berbasis IoT yang akan dikembangkan. Pertama, perangkat IoT akan dipasang di kapal untuk mengumpulkan data dari sensor. Data ini kemudian akan dikirim oleh \textit{router}/modem LTE menuju server melalui API yang telah dibuat dan disimpan ke dalam basis data. Sebelum ditampilkan di aplikasi web, data ini akan diproses terlebih dahulu di \textit{Data Processing Layer} sehingga menghasilkan wawasan seperti data \textit{running hour} mesin, tren data kecepatan mesin, dan tren data konsumsi bahan bakar. Di lapisan terakhir, data akan ditampilkan dalam bentuk grafik untuk menganalisis tren data kecepatan dan konsumsi bahan bakar serta log data untuk mendapatkan informasi spesifik pada rentang waktu tertentu. Pada penelitian ini, difokuskan pada pengembangan untuk \textit{Network Layer}, \textit{Data Processing Layer}, dan \textit{App Layer} berdasarkan arsitektur IoT yang dibahas pada bab sebelumnnya.
 
 \subsubsection{Extreme Programming}
 
@@ -56,7 +56,7 @@ Gambar diatas merupakan arsitektur dari Sistem Monitoring berbasis IoT yang akan
             p{0.35\textwidth}
             p{0.35\textwidth}
         }
-        \caption{Daftar \textit{user story}} \\
+        \caption{Daftar \textit{user story} rencana awal} \\
 
             \toprule
             \textit{Code} &
@@ -121,7 +121,7 @@ Gambar diatas merupakan arsitektur dari Sistem Monitoring berbasis IoT yang akan
         \label{tab:user-story}
     \end{longtable}
 
-    Lebih lanjut, berdasarkan user story yang dibuat di tahap sebelumnya, akan dilakukan analisis dengan output perancangan tampilan dalam bentuk \textit{wireframe} dan skema basis data dalam bentuk \textit{entity relationship diagram} (ERD) yang akan membantu dalam menggambarkan hubungan antar tabel. ERD dan contoh \textit{wireframe} dapat dilihat pada Gambar \ref{fig:erd} dan Gambar \ref{fig:wireframe} secara berturut-turut.
+    Lebih lanjut, berdasarkan \textit{user story } yang dibuat di tahap sebelumnya, akan dilakukan analisis dengan output perancangan tampilan dalam bentuk \textit{wireframe} dan skema basis data dalam bentuk \textit{entity relationship diagram} (ERD) yang akan membantu dalam menggambarkan hubungan antar tabel. ERD dan contoh \textit{wireframe} dapat dilihat pada Gambar \ref{fig:erd} dan Gambar \ref{fig:wireframe} secara berturut-turut.
 
     \begin{figure}[!h]
         \includegraphics[width=1\linewidth, center]{images/metode/erd.png}
@@ -143,11 +143,11 @@ Gambar diatas merupakan arsitektur dari Sistem Monitoring berbasis IoT yang akan
 
     \paragraph{\textit{Iteration to Release Phase}}
 
-    Fase ini terbagi menjadi beberapa bagian. Pertama, dilakukan analisis kebutuhan yang akan menghasilkan kebutuhan fungsional sistem dari task yang ditentukan; Kemudian, dilakukan desain \textit{wireframe} sederhana untuk membantu pengembang dalam proses penyelesaian task dengan sesuai; Lalu, dilakukan tahap implementasi dari perancangan sistem. Dalam pengembangan dashboard digunakan framework NextJS untuk menghasilkan tampilan yang dinamis, kemudian digunakan \textit{framework} Django yang berbasis bahasa Python untuk mengembangkan API agar perangkat IoT dapat mengirim data ke server. Setelah dilakukannya pengembangan seluruh task pada iterasi tersebut, setiap fungsi akan diuji melalui unit test sebelum akhirnya diunggah ke repositori dan akan diuji kembali setelahnya oleh mitra melalui metode \textit{black box testing}. Jika terdapat umpan balik, maka tahapan akan diulang ke tahap desain untuk menyesuaikan permintaan mitra. Sebaliknya, jika mendapatkan persetujuan maka sistem akan masuk ke tahap berikutnya.
+    Fase ini terbagi menjadi beberapa bagian. Pertama, dilakukan analisis kebutuhan yang akan menghasilkan kebutuhan fungsional sistem dari task yang ditentukan; Kemudian, dilakukan desain \textit{wireframe} sederhana untuk membantu pengembang dalam proses penyelesaian \textit{task} dengan sesuai; Lalu, dilakukan tahap implementasi dari perancangan sistem. Dalam pengembangan dasbor digunakan \textit{framework} NextJS untuk menghasilkan tampilan yang dinamis, kemudian digunakan \textit{framework} Django yang berbasis bahasa Python untuk mengembangkan API agar perangkat IoT dapat mengirim data ke server. Setelah dilakukannya pengembangan seluruh \textit{task} pada iterasi tersebut, setiap fungsi akan diuji melalui \textit{unit test} sebelum akhirnya diunggah ke repositori dan akan diuji kembali setelahnya oleh mitra melalui metode \textit{black box testing}. Jika terdapat umpan balik, maka tahapan akan diulang ke tahap desain untuk menyesuaikan permintaan mitra. Sebaliknya, jika mendapatkan persetujuan maka sistem akan masuk ke tahap berikutnya.
 
     \paragraph{\textit{Productionizing Phase}}
 
-    Setelah melewati serangkaian \textit{whitebox testing} dan mendapatan persetujuan mitra, sistem akan diluncurkan secara perlahan pada server dengan mode \textit{development}. Pada fase ini, mitra dapat langsung menggunakan sistem yang belum sempurna dengan harapan dapat memberi umpan balik selama proses pengembangan sistem. Jika terdapat fitur yang dirasa kurang lengkap atau ingin ditambahkan oleh mitra, hasilnya akan dibalikkan ke tahap \textit{planning} untuk dilakukan prioritas ulang.
+    Setelah melewati serangkaian pengujian dan mendapatan persetujuan mitra, sistem akan diluncurkan secara perlahan ke \textit{server} dengan mode \textit{development}. Pada fase ini, mitra dapat langsung menggunakan sistem yang belum sempurna dengan harapan dapat memberi umpan balik selama proses pengembangan sistem. Jika terdapat fitur yang dirasa kurang lengkap atau ingin ditambahkan oleh mitra, hasilnya akan dibalikkan ke tahap \textit{planning} untuk dilakukan prioritas ulang.
 
     \paragraph{\textit{Maintenance Phase}}
 

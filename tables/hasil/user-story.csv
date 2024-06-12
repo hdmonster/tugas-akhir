@@ -13,3 +13,7 @@ US-11, Admin, Logout, Keluar dari sistem melalui tombol logout
 US-12, Admin, Mengelola data pengguna, Mengelola data pengguna yang dapat mengakses sistem
 US-13, Admin, Mengelola data kapals, Mengelola data profil kapal
 US-14, Admin, Mengelola data FCRV, Menetapkan nilai batas atas/bawah tiap kategori kecepatan
+US-15, User, Melihat informasi konsumsi bahan bakar dan running hour kapal pada periode tertentu, Mendapat ringkasan informasi dari kapal
+US-16, User, Melihat data konsumsi bahan bakar dalam format dokumen OP41, Mengarahkan awak kapal untuk mengacu nilai laporan dari halaman tersebut
+US-17, User, Memilih kapal pada satu halaman tertentu, Melakukan navigasi ke halaman detail kapal tertentu
+

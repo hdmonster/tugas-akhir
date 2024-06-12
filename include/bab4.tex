@@ -26,8 +26,6 @@ Selama pengembangan sistem, digunakan beberapa \textit{tools} yang akan membantu
 
 \section{Perencanaan \textit{(Planning)}}
 
-\subsection{Rencana Awal \textit{(Initial Planning)}}
-
 Pada tahap ini, seluruh \textit{User Story} akan menjadi kumpulan \textit{task} yang akan disortir berdasarkan tingkat prioritas yang dinilai dari 1 hingga 5 dan estimasi waktu pengerjaannya dalam satuan hari. Seluruh rencana iterasi dapat dilihat pada Tabel \ref{tab:iteration-1} hingga Tabel \ref{tab:iteration-5} dibawah.
 
 Iterasi pertama difokuskan untuk mengelola data kecepatan mesin dan menampilkannya dalam bentuk grafik.
@@ -42,22 +40,13 @@ Selanjutnya, pada iterasi ketiga dilakukan pengembangan sistem admin yang memung
 
 \input{tables/hasil/initial-planning/iteration3.tex}
 
-Iterasi keempat berfokus pada pembuatan laporan harian kecepatan mesin dan konsumsi bahan bakar dalam format PDF.
+Iterasi keempat berfokus pada halaman Overview, ekspor data mentah kecepatan mesin dalam format CSV, dan laporan harian kecepatan mesin dan konsumsi bahan bakar dalam format PDF
 
 \input{tables/hasil/initial-planning/iteration4.tex}
 
-Terakhir, pada iterasi kelima dilakukan pengembangan sistem autentikasi dan juga ekspor data mentah kecepatan mesin dalam format CSV.
+Terakhir, pada iterasi kelima dilakukan pengembangan halaman OP41 Report, halaman Home, dan sistem autentikasi.
 
 \input{tables/hasil/initial-planning/iteration5.tex}
-
-\subsection{Perubahan \textit{(Changes)}}
-
-Selama pengerjaan berlangsung, terdapat beberapa umpan balik dari mitra yang mengakibatkan penambahan pada \textit{task}. Sehingga, ini juga berdampak pada rencana iterasi yang sebelumnya telah dibuat. Secara garis besar, \textit{task} yang bertambah adalah sistem admin untuk melakukan manajemen data kapal, manajemen data pengguna, manajemen data FCRV. Hasil akhir, terdapat \textit{task} dengan total sebanyak 13 item yang dikerjakan selama 5 iterasi.
-
-\input{tables/hasil/changes.tex}
-
-Setelah mendapat kebutuhan awal, terdapat permintaan tambahan untuk membangun sistem admin agar mitra dapat lebih leluasa untuk melakukan konfigurasi data. Sistem admin meliputi manajemen data pengguna, data kapal, dan data FCRV. Setelah direkap di \textit{user story} dan dilakukan skala prioritas, pengembagan Sistem Admin akan dilakukan pada iterasi 3.
-Pada iterasi kedua, terdapat permintaan untuk mencantumkan angka \textit{running hour} pada Halaman Engine Speed yang diposisikan dibawah angka kecepatan mesin. Sedangkan pada iterasi 5, terdapat permintaan untuk menambah 2 halaman, yakni Home dan OP41 Report. Halaman Home berisi seluruh kapal yang terdaftar dan Halaman OP41 Report berisi laporan konsumsi bahan bakar berdasarkan perhitungan dari kategori FCRV yang dapat dilihat pada Lampiran \ref{apdx:hasil}.
 
 
 \section{Implementasi \textit{(Iteration to Release)}}
@@ -72,7 +61,7 @@ Secara garis besar, implementasi dilakukan sebanyak 5 iterasi yang berlangsung s
 
 Setelah satu iterasi selesai dan telah melewati seluruh ceklis pada \textit{Whitebox} dan \textit{Blackbox testing} maka akan dilanjutkan ke iterasi kedua. Pada penelitian ini, hasil iterasi 2 hingga iterasi 5 ditaruh pada lampiran dikarenakan memiliki pola pengembangan yang identikal. Hasil pada iterasi 1 akan secara detail dijabarkan pada bagian-bagian berikut.
 
-\subsection{Analisis}
+\subsection{\textit{Analysis}}
 
 Kebutuhan sistem merupakan analisis yang dilakukan untuk mengetahui kebutuhan fungsional sistem. Kebutuhan fungsional sistem sendiri merupakan fungsionalitas yang harus tersedia di sistem sesuai kebutuhan \textit{stakeholder} yang tertuang di \textit{user story}. Aturan penomoran kebutuhan sistem dapat dilihat pada Tabel \ref{tab:aturan-penomoran} .
 
@@ -110,21 +99,21 @@ Berikut merupakan contoh kebutuhan fungsional pada iterasi 1 yang hanya meliputi
     \label{fig:fr-es}
 \end{figure}
 
-\subsection{Desain}
+\subsection{\textit{Design}}
 
 Lalu, pada tahap desain dilakukan perancangan \textit{wireframe low fidelity} untuk memberikan gambaran pada pengembang terkait antarmuka dari \textit{task} yang dikerjakan. \textit{Wireframe} terdiri dari komponen dan tata letaknya tanpa teks atau konten detail. \textit{Wireframe} pada Halaman Engine Speed sendiri sebelumnya telah ditampilkan pada Gambar \ref{fig:wireframe}.
 
 Dari \textit{wireframe} tersebut, dilakukan pengerjaan tampilan yang disebut juga dengan \textit{UI Slicing}. Pada halaman ini, pengguna dapat melihat angka kecepatan mesin terakhir dan nilai rata-rata dengan interval 1 jam dalam jangka waktu satu hari yang disajikan dalam bentuk grafik. Jangka waktu dapat dipilih melalui filter yang akan disediakan pada area komponen grafik. Seluruh navigasi pada sistem dapat dilakukan dengan memilih komponen \textit{Navbar} atau \textit{Sidebar}. Hasil pengerjaan \textit{UI Slicing} dapat dilihat pada Gambar \ref{fig:fe-es}.
 
 \begin{figure}[!h]
-    \includegraphics[width=1.1\linewidth, center]{images/hasil/iterations/1/fe-es.png}
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/1/fe-es.png}
     \caption{Frontend Halaman Engine Speed}
     \label{fig:fe-es}
 \end{figure}
 
-\subsection{Coding}
+\subsection{\textit{Coding}}
 
-Pada tahap ini, akan dilakukan pengkodean Halaman Engine Speed yang merupakan halaman untuk melihat kecepatan mesin terakhir dan histori tren kecepatan mesin yang disajikan dalam bentuk grafik garis. Sebelum itu, dilakukan penulisan algoritma dalam bentuk \textit{pseudocode} dan diagram alir seperti pada tabel dan gambar berikut.
+Pada tahap ini, akan dilakukan pengkodean Halaman Engine Speed yang merupakan halaman untuk melihat kecepatan mesin terakhir dan histori tren kecepatan mesin yang disajikan dalam bentuk grafik garis. Algoritma dituangkan dalam bentuk \textit{pseudocode} dan diagram alir yang akan dijabarkan sebagai berikut.
 
 Pada Halaman Engine Speed, data diperoleh dari \textit{server} melalui API berdasarkan kode kapal \textit{(vessel code)} dan filter tanggal. Selama proses pemanggilan data, sistem akan menampilkan animasi \textit{loading} untuk menunjukkan bahwa proses sedang berlangsung. Terdapat dua kemungkinan nilai yang dikembalikan oleh server, yakni \textit{'success'} atau \textit{'error'} beserta dengan penjelasan lengkapnya. Jika \textit{'success'} maka hasil respon dari API akan diinisiasi pada variabel \textit{engine data} dan akan ditampilkan pada komponen \textit{card} dan \textit{chart}. Sebaliknya, layar eror akan ditampilkan beserta dengan kode dan pesan erornya. \textit{Pseudocode} dan diagram alir penampilan data di Halaman Engine Speed dapat dilihat pada Tabel \ref{tab:pseudocode-fe} dan Gambar \ref{fig:flow-fe}.
 
@@ -138,39 +127,75 @@ Pada Halaman Engine Speed, data diperoleh dari \textit{server} melalui API berda
 
 \newpage
 
-Data yang ditampilkan pada web merupakan hasil pengambilan data dari \textit{IoT Node} yang sebelumnya telah terpasang di kapal. IoT Node memiliki dua proses yang dijalankan secara simultan, yakni pengambilan data dan sinkronisasi data. Pengambilan data dilakukan setiap interval 1 menit yang berisi data kecepatan mesin kiri dan kanan serta tanggal dan waktunya. Berikut merupakan alur pengambilan data pada \textit{IoT Node} yang dapat dilihat pada Tabel \ref{tab:pseudocode-iot-node} dan Gambar \ref{fig:flow-iot-node}.
+Lebih lanjut, berikut hasil dari pengerjaan Engine Speed dari sisi \textit{backend}. Pada satu \textit{endpoint}, terdapat beberapa fungsi yang dipanggil untuk mendapatkan masing-masing data seperti tanggal data terakhir, tren kecepatan mesin, kecepatan mesin terakhir, dan total running hour. Output dari fungsi-fungsi tersebut bergantung pada data kecepatan mesin yang didapatkan dari kueri. Oleh karenanya, dilakukan kontrol \textit{if statement} untuk mengecek apakah data kecepatan mesin kosong atau tidak. Jika kosong, maka fungsi akan mengembalikan nilai \textit{default} yakni 0. Diagram alir pada \textit{backend} Engine Speed dapat dilihat pada Gambar \ref{fig:flow-be-overview}.
 
-\input{tables/hasil/pseudocodes/iot-nodes.tex}
 \begin{figure}[!h]
-    \includegraphics[width=.6\linewidth, center]{images/flowcharts/flow-iot-nodes.png}
-    \caption{Diagram Alir Pengambilan Data Kecepatan Mesin Pada IoT Node}
-    \label{fig:flow-iot-node}
+    \includegraphics[width=1.2\linewidth, center]{images/flowcharts/flow-be-overview.png}
+    \caption{Diagram Alir API Engine Speed}
+    \label{fig:flow-be-overview}
 \end{figure}
+
+% This paragraph details the process of data collection and synchronization in the \textit{IoT Node}.
+% I might not include these, since the topic is out of scope.
+
+% Data yang ditampilkan pada web merupakan hasil pengambilan data dari \textit{IoT Node} yang sebelumnya telah terpasang di kapal. \textit{IoT Node} memiliki dua proses yang dijalankan secara simultan, yakni pengambilan data dan sinkronisasi data. Pengambilan data dilakukan setiap interval 1 menit yang berisi data kecepatan mesin kiri dan kanan serta tanggal dan waktunya. Berikut merupakan alur pengambilan data pada \textit{IoT Node} yang dapat dilihat pada Tabel \ref{tab:pseudocode-iot-node} dan Gambar \ref{fig:flow-iot-node}.
+
+% \input{tables/hasil/pseudocodes/iot-nodes.tex}
+% \begin{figure}[!h]
+%     \includegraphics[width=.6\linewidth, center]{images/flowcharts/flow-iot-nodes.png}
+%     \caption{Diagram Alir Pengambilan Data Kecepatan Mesin Pada IoT Node}
+%     \label{fig:flow-iot-node}
+% \end{figure}
+
+% \newpage
+
+% Pada proses sinkronisasi data, \textit{IoT Node} akan mengecek dahulu apakah terdapat koneksi internet saat hendak melakukan pengiriman data. Perlu diingat bahwa ketika kapal beroperasi di wilayah jauh dari daratan, seringkali tidak terdapat koneksi internet. Oleh karenanya, \textit{IoT Node} harus mampu menyimpan data pada penyimpanan internal terlebih dahulu. Untuk menghemat sumber daya komputasi pada Raspberry Pi, proses sinkron selanjutnya akan dilakukan 20 menit kemudian.
+
+% Lebih lanjut, jika terhubung ke internet, \textit{IoT Node} akan mengumpulkan seluruh data yang belum tersinkron, ini ditandai dengan data dengan \textit{sync flag} yang bernilai FALSE. Seluruh data yang akan dikirim akan dikelompokkan menjadi 10 data pada setiap \textit{request}. Jika mendapat respon sukses dari server maka \textit{sync flag} akan diubah menjadi TRUE, dilanjut dengan menampilkan pesan sukses. Sebaliknya, jika mendapat respon error dari server maka \textit{sync flag} akan tetap bernilai FALSE dan akan menampilkan pesan error.
+
+% Berikut merupakan \textit{pseudocode} diagram alir sinkronisasi data pada \textit{IoT Node} yang dapat dilihat pada Tabel \ref{tab:pseudocode-save-to-server} dan Gambar \ref{fig:flow-upload}.
+
+% \input{tables/hasil/pseudocodes/save-to-server.tex}
+% \begin{figure}[!h]
+%     \includegraphics[width=1.2\linewidth, center]{images/flowcharts/flow-save-to-server.png}
+%     \caption{Diagram Alir Pengiriman Data Ke Server}
+%     \label{fig:flow-upload}
+% \end{figure}
 
 \newpage
 
-Pada proses sinkronisasi data, \textit{IoT Node} akan mengecek dahulu apakah terdapat koneksi internet saat hendak melakukan pengiriman data. Perlu diingat bahwa ketika kapal beroperasi di wilayah jauh dari daratan, seringkali tidak terdapat koneksi internet. Oleh karenanya, \textit{IoT Node} harus mampu menyimpan data pada penyimpanan internal terlebih dahulu. Untuk menghemat sumber daya komputasi pada Raspberry Pi, proses sinkron selanjutnya akan dilakukan 20 menit kemudian.
+\subsection{\textit{Whitebox Testing}}
 
-Lebih lanjut, jika terhubung ke internet, \textit{IoT Node} akan mengumpulkan seluruh data yang belum tersinkron, ini ditandai dengan data dengan \textit{sync flag} yang bernilai FALSE. Seluruh data yang akan dikirim akan dikelompokkan menjadi 10 data pada setiap \textit{request}. Jika mendapat respon sukses dari server maka \textit{sync flag} akan diubah menjadi TRUE, dilanjut dengan menampilkan pesan sukses. Sebaliknya, jika mendapat respon error dari server maka \textit{sync flag} akan tetap bernilai FALSE dan akan menampilkan pesan error.
+Sebelum diunggah ke \textit{codebase} atau Github, dilakukan pengujian \textit{whitebox} dengan membuat \textit{Unit Test} yang akan dijalankan selama pengembangan. \textit{Unit test} dilakukan pada pengembangan \textit{API} yang merupakan bagian dari \textit{Data Processing Layer} dan \textit{Network Layer}. Hal ini agar data yang akan ditampilkan pada antarmuka sistem merupakan data yang valid sehingga dapat memberikan wawasan yang tepat. Aturan penomoran \textit{whitebox} dapat dilihat pada Tabel \ref{tab:nr-whitebox}.
 
-Berikut merupakan \textit{pseudocode} diagram alir sinkronisasi data pada \textit{IoT Node} yang dapat dilihat pada Tabel \ref{tab:pseudocode-save-to-server} dan Gambar \ref{fig:flow-upload}.
+\input{tables/hasil/whitebox-numbering.tex}
 
-\input{tables/hasil/pseudocodes/save-to-server.tex}
-\begin{figure}[!h]
-    \includegraphics[width=1.2\linewidth, center]{images/flowcharts/flow-save-to-server.png}
-    \caption{Diagram Alir Pengiriman Data Ke Server}
-    \label{fig:flow-upload}
-\end{figure}
+Hasil perhitungan \textit{cyclomatic complexity (CYC)} pada kode \textit{backend} Engine Speed dimulai dari pembuatan \textit{flowchart} dan \textit{flowgraph} yang dapat dilihat pada Gambar \ref{fig:flow-be-overview} dan Gambar \ref{fig:flowgraph-be-es} secara berturut-turut. Lalu dilakukan perhitungan nilai CYC menggunakan rumus yang sebelumnya telah dijabarkan pada Notasi 2.1.
 
-\newpage
+\input{images/flowgraphs/engine-speed-backend.tex}
 
-\subsection{Whitebox Testing}
+Dari \textit{flowgraph} diatas, terdapat jumlah Node dan Edge masing-masing adalah 10. Berdasarkan rumus perhitungan \ref{eq:cyc}, didapatkan hasil nilai CYC adalah 2. Maka dari itu, telah dibuat 2 \textit{test case} yang dapat dilihat pada Tabel \ref{tab:it1-whitebox-es}.
 
-Sebelum diunggah ke \textit{codebase} atau Github, dilakukan pengujian \textit{whitebox} dengan membuat \textit{Unit Test} yang akan dijalankan selama pengembangan. \textit{Unit test} dilakukan pada pengembagan API yang merupakan bagian dari \textit{Data Processing Layer} dan \textit{Network Layer}. Hal ini agar data yang akan ditampilkan pada antarmuka sistem merupakan data yang valid sehingga dapat memberikan wawasan yang tepat. \textit{Unit test} yang dibuat dapat dilihat pada Lampiran \ref{apdx:hasil}.
+\begin{equation}\label{eq:cyc-es}
+    \begin{split}
+        V(G) & = E - N + 2 \\
+            & = 10 - 10 + 2 \\
+            & = 2
+    \end{split}
+\end{equation}
+
+Namun, pada praktiknya perhitungan nilai CYC tidak dilakukan secara manual, melainkan menggunakan library Python, yakni \textit{mccabe}. Hasil skor CYC pada kode \textit{backend} dapat dilihat pada Lampiran \ref{apdx:hasil-cc}.
+
+\begin{landscape}
+    \input{tables/hasil/iterations/1/whitebox/engine-speed.tex}
+
+\end{landscape}
+
+
 
 \begin{landscape}
 
-    \subsection{Blackbox Testing}
+    \subsection{\textit{{Blackbox Testing}}}
 
     Setelah repositori telah terbarui, mitra dapat langsung mengakses sistem untuk menguji fungsionalitas fitur yang telah dikerjakan pada iterasi tersebut.
 
@@ -180,6 +205,45 @@ Sebelum diunggah ke \textit{codebase} atau Github, dilakukan pengujian \textit{w
 
     \input{tables/hasil/iterations/1/blackbox/engine-speed.tex}
 \end{landscape}
+
+\section{\textit{Productionizing Phase}}
+
+Selama pengerjaan berlangsung, terdapat beberapa umpan balik dari mitra yang mengakibatkan penambahan pada \textit{task}. Sehingga, ini juga berdampak pada rencana iterasi yang sebelumnya telah dibuat. Secara garis besar, \textit{task} yang bertambah adalah sistem admin untuk melakukan manajemen data kapal, manajemen data pengguna, manajemen data FCRV dan beberapa halaman tambahan untuk pengguna. Hasil akhir, umpan balik dapat dilihat pada Tabel \ref{tab:feedback}
+
+\input{tables/hasil/changes.tex}
+
+Pada iterasi kedua, terdapat permintaan untuk mencantumkan angka \textit{running hour} pada Halaman Engine Speed yang diposisikan dibawah angka kecepatan mesin. Lalu pada iterasi 3 terdapat permintaan tambahan untuk membangun sistem admin agar mitra dapat lebih leluasa untuk melakukan konfigurasi data. Sistem admin meliputi manajemen data pengguna, data kapal, dan data FCRV. Setelah direkap di \textit{user story} dan dilakukan skala prioritas, pengembagan Sistem Admin akan dilakukan pada iterasi 3. Pada iterasi 4, ditambakan halaman Overview yang berisi data kecepatan mesin terakhir dan data ringkasan konsumsi bahan bakar yang dapat dilihat pada gambar \ref{fig:fe-overview}. Terakhir, pada iterasi 5 terdapat permintaan untuk menambah 2 halaman, yakni Home dan OP41 Report. Halaman Home berisi seluruh kapal yang terdaftar dan Halaman OP41 Report berisi laporan konsumsi bahan bakar berdasarkan perhitungan dari kategori FCRV yang dapat dilihat pada Gambar \ref{fig:fe-home} dan Gambar \ref{fig:fe-op41}.
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/4/fe-overview.png}
+    \caption{Frontend Halaman Overview}
+    \label{fig:fe-overview}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/5/fe-home.png}
+    \caption{Frontend Halaman Home}
+    \label{fig:fe-home}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=1.05\linewidth, center]{images/hasil/iterations/5/fe-op41.png}
+    \caption{Frontend Halaman OP41 Report}
+    \label{fig:fe-op41}
+\end{figure}
+
+\section{\textit{Maintenance Phase}}
+
+Pada fase ini, Sistem Monitoring sudah dapat digunakan layaknya produk akhir. Seluruh data yang diinput pada Sistem merupakan data asli yang telah terhubung dengan basis data utama. Fase ini diakhiri dengan penandada tanganan Dokumen User Acceptance Test (UAT) oleh mitra yang dapat dilihat pada Lampiran \ref{apdx:hasil}.
+
+\section{\textit{Death Phase}}
+
+Pada akhirnya, konfigurasi lingkungan diubah dari \textit{'development'} menjadi \textit{'production'}. Hasil akhir dari fase ini adalah sebuah sistem yang siap untuk digunakan oleh pengguna.
+
+
+
+
+
 
 % Backup >?
 

@@ -1,4 +1,4 @@
 Test Code, Test Case, Test Steps, Expected Result, Actual Result, Pass/Fail
-SM-T-DL-01, Melihat log data, 1. Membuka halaman Data Log, Sistem menampilkan data dengan rentang waktu 30 hari kebelakang, Sesuai, PASSED
-SM-T-DL-02, Melakukan filter tanggal, 1. Membuka halamann Data Log 2. Memilih tanggal melalui komponen datepicker, Sistem menampilkan data dengan rentang waktu yang dipilih, Sesuai, PASSED
+SM-BT-DL-01, Melihat log data, 1. Membuka halaman Data Log, Sistem menampilkan data dengan rentang waktu 30 hari kebelakang, Sesuai, Pass
+SM-BT-DL-02, Melakukan filter tanggal, 1. Membuka halamann Data Log 2. Memilih tanggal melalui komponen datepicker, Sistem menampilkan data dengan rentang waktu yang dipilih, Sesuai, Pass
 

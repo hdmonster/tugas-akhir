@@ -1,0 +1,4 @@
+Test Code, Test Case, Test Steps, Expected Result, Actual Result , Pass/Fail
+SM-BT-OR-01 , Melihat laporan OP41 , 1. Membuka halaman OP41 Report, Sistem akan menampilkan nilai running hour dan konsumsi bahan bakar pada tanggal hari tersebut, Sesuai, Pass
+SM-BT-OR-02 , Terdapat data pada tanggal yang dipilih, 1. Membuka halaman OP41 Report 2. Melakukan filter tanggal yang terdapat data, Sistem akan menampilkan nilai running hour dan konsumsi bahan bakar sesuai di tanggal tersebut, Sesuai, Pass
+SM-BT-OR-03 , Tidak terdapat data pada tanggal yang dipilih, 1. Membuka halaman OP41 Report 2. Melakukan filter tanggal yang tidak terdapat data, Sistem akan menampilkan nilai 0 pada seluruh baris, Sesuai, Pass

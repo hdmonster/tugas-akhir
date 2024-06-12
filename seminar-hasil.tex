@@ -1,6 +1,6 @@
 \documentclass{lib/skripsi}
 
-\usepackage{blindtext, caption, csvsimple, fancybox, longtable, pdflscape, tocloft}
+\usepackage{algpseudocodex, blindtext, caption, csvsimple, fancybox, longtable, pdflscape, tocloft, tikz}
 
 % Redefine caption format for regular tables
 \captionsetup[table]{position=top,justification=raggedright}
@@ -43,12 +43,17 @@
     %===========================================================
     % Kata pengantar, abstract
     %-----------------------------------------------------------
+    \blankpage
 
     \supervisorapprovalpage
+
+    \blankpage
 
     \addcontentsline{toc}{chapter}{KATA PENGANTAR}
     \input{include/kata-pengantar.tex}
     \pagebreak
+
+    \blankpage
 
     \addcontentsline{toc}{chapter}{ABSTRAK}
     \input{include/halaman-abstrak.tex}
@@ -57,6 +62,8 @@
     %===========================================================
     % Daftar isi, daftar gambar, daftar tabel
     %-----------------------------------------------------------
+    \blankpage
+
     \addcontentsline{toc}{chapter}{DAFTAR ISI}
     \tableofcontents
     \pagebreak
@@ -72,6 +79,8 @@
     \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
     \listofappendices
     \pagebreak
+
+    \blankpage
 
     \pagenumbering{arabic}
     %-----------------------------------------------------------

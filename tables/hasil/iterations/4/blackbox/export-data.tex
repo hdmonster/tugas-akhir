@@ -7,8 +7,8 @@
             p{0.3\textwidth}
             p{0.15\textwidth}
     }
-    \caption{Blackbox Testing Ekspor Data Log Kecepatan Mesin}
-    \label{tab:it4-blackbox-generate-es-report} \\
+    \caption{\textit{Blackbox Testing} Ekspor Data Log Kecepatan Mesin}
+    \label{tab:it4-blackbox-export-data} \\
 
     \hline
         \bfseries \textit{Test Code} &
@@ -35,7 +35,7 @@
     \csvreader[
         late after line=\\,
         before reading={\catcode`\#=12},after reading={\catcode`\#=6}
-    ]{tables/hasil/iterations/5/blackbox/export-data.csv}
+    ]{tables/hasil/iterations/4/blackbox/export-data.csv}
     {1=\code, 2=\case, 3=\step, 4=\expect, 5=\actual, 6=\status}
     {\code & \case & \step & \expect & \actual & \status} \\
 

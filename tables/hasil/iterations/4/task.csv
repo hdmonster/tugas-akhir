@@ -1,3 +1,5 @@
 kode, deskripsi, prioritas, estimasi waktu
-US-07 , Mengunduh laporan harian kecepatan mesin dengan format PDF, 3 , 2
-US-08 , Mengunduh laporan harian konsumsi bahan bakar dengan format PDF , 3 , 2
+US-15, Mendapatkan ringkasan informasi konsumsi bahan bakar dan running hour kapal, 3, 1
+US-07 , Mengunduh laporan harian kecepatan mesin dengan format PDF, 2 , 1
+US-08 , Mengunduh laporan harian konsumsi bahan bakar dengan format PDF , 2 , 1
+US-09 , Mengunduh seluruh log data dari modul dengan format CSV , 2 , 1

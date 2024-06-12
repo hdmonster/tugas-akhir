@@ -1,0 +1,43 @@
+\begin{longtable}[!h]
+    {
+            p{0.2\textwidth}
+            p{0.3\textwidth}
+            p{0.3\textwidth}
+            p{0.3\textwidth}
+            p{0.3\textwidth}
+            p{0.15\textwidth}
+    }
+    \caption{\textit{Blackbox Testing} Halaman Home}
+    \label{tab:it5-blackbox-home} \\
+
+    \hline
+        \bfseries \textit{Test Code} &
+        \bfseries \textit{Test Case} &
+        \bfseries \textit{Test Steps} &
+        \bfseries \textit{Expected Result} &
+        \bfseries \textit{Actual Result} &
+        \bfseries \textit{Pass/Fail} \\ [0.5ex]
+    \hline
+
+    \endfirsthead
+
+    \hline
+        \bfseries \textit{Test Code} &
+        \bfseries \textit{Test Case} &
+        \bfseries \textit{Test Steps} &
+        \bfseries \textit{Expected Result} &
+        \bfseries \textit{Actual Result} &
+        \bfseries \textit{Pass/Fail} \\ [0.5ex]
+    \hline
+    \endhead % all the lines above this will be repeated on every page
+    \hline
+
+    \csvreader[
+        late after line=\\,
+        before reading={\catcode`\#=12},after reading={\catcode`\#=6}
+    ]{tables/hasil/iterations/5/blackbox/home.csv}
+    {1=\code, 2=\case, 3=\step, 4=\expect, 5=\actual, 6=\status}
+    {\code & \case & \step & \expect & \actual & \status} \\
+
+    \bottomrule
+\end{longtable}

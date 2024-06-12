@@ -1,5 +1,7 @@
 No,Umpan Balik,Iterasi,Status
 1, Menambah angka running hour pada halaman engine speed, 2, Selesai
-2, Sistem admin, 3, Selesai
-3, Menambah halaman Overview, 5, Selesai
-4, Menambah halaman OP41 Report, 5, Selesai
+2, Menambah sistem admin, 3, Selesai
+3, Menambah halaman Overview, 4, Selesai
+4, Menambah halaman Home, 5, Selesai
+5, Menambah halaman OP41 Report, 5, Selesai
+6, Menambah peringatan waktu sinkron data pada halaman OP41 Report, 5, Selesai
